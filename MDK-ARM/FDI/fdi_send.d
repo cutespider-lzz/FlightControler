@@ -1,0 +1,41 @@
+fdi\fdi_send.o: ..\FDILink\FDI_send.c
+fdi\fdi_send.o: ../Core/Inc/main.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
+fdi\fdi_send.o: ../Core/Inc/stm32h7xx_hal_conf.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h743xx.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Include/core_cm7.h
+fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Include/cmsis_version.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+fdi\fdi_send.o: ../Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\math.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_mdma.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_exti.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_cortex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_flash_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_hsem.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+fdi\fdi_send.o: ../FDILink/fdilink_decode.h
+fdi\fdi_send.o: ../FDILink/FDILink.h
+fdi\fdi_send.o: ../FDILink/FDI_send.h
+fdi\fdi_send.o: ../FDILink/FDI_config.h
+fdi\fdi_send.o: ../FDILink/FDI_Search_Function.h
