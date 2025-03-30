@@ -32,6 +32,12 @@ fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_sdmmc.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_delayblock.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sd_ex.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
+fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
 fdi\fdi_send.o: ../FDILink/fdilink_decode.h
@@ -39,3 +45,5 @@ fdi\fdi_send.o: ../FDILink/FDILink.h
 fdi\fdi_send.o: ../FDILink/FDI_send.h
 fdi\fdi_send.o: ../FDILink/FDI_config.h
 fdi\fdi_send.o: ../FDILink/FDI_Search_Function.h
+fdi\fdi_send.o: ../Code/Inc/navigation.h
+fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

@@ -2,6 +2,7 @@
 #include "fdilink_decode.h"
 #include "FDILink.h"
 #include "FDI_send.h"
+#include "navigation.h"
 //----------------------------------------------------------------------//
 //				          - FDI_LINK Packet sending protocol                 -//
 //----------------------------------------------------------------------//
@@ -16,7 +17,7 @@ void UART2_ReceiveHandler(void);
 //extern uint8_t		Res;
 //static uint8_t USB_Tx_Buffer[2048];
 //uint8_t		count;
-static FDILink_Status_t _FDILink;
+
 /*!
 *	Sends a FDI message based on the received data.
 *@param[in] None.

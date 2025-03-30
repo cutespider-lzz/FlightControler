@@ -560,6 +560,4 @@ void fdiResetAll(FDILink_Status_t* FDILink); 									//初始化结构体
 //格式 int Serial_Send(void* buffer,int length)
 #define Serial_Send(...) 0
 
-extern FDILink_Status_t _FDILink;
-
 #endif

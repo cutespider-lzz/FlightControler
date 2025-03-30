@@ -54,6 +54,8 @@ extern FDILink_Status_t _FDILink;
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -66,6 +68,16 @@ void Error_Handler(void);
 #define SIGNAL_GPIO_Port GPIOB
 #define LED_Pin GPIO_PIN_9
 #define LED_GPIO_Port GPIOE
+#define BAT4_Pin GPIO_PIN_14
+#define BAT4_GPIO_Port GPIOB
+#define BAT3_Pin GPIO_PIN_15
+#define BAT3_GPIO_Port GPIOB
+#define BAT2_Pin GPIO_PIN_8
+#define BAT2_GPIO_Port GPIOD
+#define BAT1_Pin GPIO_PIN_9
+#define BAT1_GPIO_Port GPIOD
+#define SDIO_Pin GPIO_PIN_15
+#define SDIO_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

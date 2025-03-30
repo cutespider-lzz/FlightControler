@@ -22,170 +22,16 @@ Dialog DLL:      TCM.DLL V1.42.0.0
  
 <h2>Project:</h2>
 D:\Code\FDI\MDK-ARM\FDI.uvprojx
-Project File Date:  03/29/2025
+Project File Date:  03/30/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'FDI'
-compiling FDILink.c...
-..\FDILink\FDILink.c(378): warning:  #940-D: missing return statement at end of non-void function "fdiGetPacket" 
-  }
-..\FDILink\FDILink.c(400): warning:  #940-D: missing return statement at end of non-void function "fdiComGetAxis" 
-  }
-..\FDILink\FDILink.c(423): warning:  #940-D: missing return statement at end of non-void function "fdiComGetAnte" 
-  }
-..\FDILink\FDILink.c(478): warning:  #940-D: missing return statement at end of non-void function "fdiGetDgnss" 
-  }
-..\FDILink\FDILink.c(503): warning:  #940-D: missing return statement at end of non-void function "fdiComGetParam" 
-  }
-..\FDILink\FDILink.c(347): warning:  #177-D: variable "_FDILink"  was declared but never referenced
-  static FDILink_Status_t _FDILink;
-..\FDILink\FDILink.c: 6 warnings, 0 errors
-compiling FDI_send.c...
-..\FDILink\FDI_send.c(112): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&VersionData,buf,sizeof(FDILink_VersionData_Packet_t));
-..\FDILink\FDI_send.c(129): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&IMUData,buf,sizeof(FDILink_IMUData_Packet_t));
-..\FDILink\FDI_send.c(148): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&AHRSData,buf,sizeof(FDILink_AHRSData_Packet_t));
-..\FDILink\FDI_send.c(166): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&INSGPSData,buf,sizeof(FDILink_INSGPSData_Packet_t));
-..\FDILink\FDI_send.c(186): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&System_State_data,buf,sizeof(System_State_Packet_t));
-..\FDILink\FDI_send.c(192): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&TimeData,buf,sizeof(Unix_Time_Packet_t));
-..\FDILink\FDI_send.c(208): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&FTimeData,buf,sizeof(Formatted_Time_Packet_t));
-..\FDILink\FDI_send.c(224): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Position_Standard_Deviation_data,buf,sizeof(Position_Standard_Deviation_Packet_t));
-..\FDILink\FDI_send.c(240): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Velocity_Standard_Deviation_data,buf,sizeof(Velocity_Standard_Deviation_Packet_t));
-..\FDILink\FDI_send.c(256): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Euler_Orientation_Standard_Deviation_data,buf,sizeof(Euler_Orientation_Standard_Deviation_Packet_t));
-..\FDILink\FDI_send.c(272): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Quaternion_Orientation_Standard_Deviation_data,buf,sizeof(Quaternion_Orientation_Standard_Deviation_Packet_t));
-..\FDILink\FDI_send.c(288): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Raw_Sensors_data,buf,sizeof(Raw_Sensors_Packet_t));
-..\FDILink\FDI_send.c(304): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Raw_GNSS_data,buf,sizeof(Raw_GNSS_Packet_t));
-..\FDILink\FDI_send.c(310): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Satellites_data,buf,sizeof(Satellites_Packet_t));
-..\FDILink\FDI_send.c(316): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Detailed_Satellites_data,buf,sizeof(Detailed_Satellites_Packet_t));
-..\FDILink\FDI_send.c(322): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Geodetic_Position_data,buf,sizeof(Geodetic_Position_Packet_t));
-..\FDILink\FDI_send.c(328): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&ECEF_Position_data,buf,sizeof(ECEF_Position_Packet_t));
-..\FDILink\FDI_send.c(334): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&UTM_Position_data,buf,sizeof(UTM_Position_Packet_t));
-..\FDILink\FDI_send.c(340): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&NED_Velocity_data,buf,sizeof(NED_Velocity_Packet_t));
-..\FDILink\FDI_send.c(346): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Body_Velocity_data,buf,sizeof(Body_Velocity_Packet_t));
-..\FDILink\FDI_send.c(352): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Acceleration_data,buf,sizeof(Acceleration_Packet_t));
-..\FDILink\FDI_send.c(358): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Body_Acceleration_data,buf,sizeof(Body_Acceleration_Packet_t));
-..\FDILink\FDI_send.c(364): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Euler_Orientation_data,buf,sizeof(Euler_Orientation_Packet_t));
-..\FDILink\FDI_send.c(370): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Quaternion_Orientation_data,buf,sizeof(Quaternion_Orientation_Packet_t));
-..\FDILink\FDI_send.c(376): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&DCM_Orientation_data,buf,sizeof(DCM_Orientation_Packet_t));
-..\FDILink\FDI_send.c(382): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Angular_Velocity_data,buf,sizeof(Angular_Velocity_Packet_t));
-..\FDILink\FDI_send.c(388): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&Angular_Acceleration_data,buf,sizeof(Angular_Acceleration_Packet_t));
-..\FDILink\FDI_send.c(394): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Position_And_Velocity_data,buf,sizeof(External_Position_And_Velocity_Packet_t));
-..\FDILink\FDI_send.c(400): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Position_data,buf,sizeof(External_Position_Packet_t));
-..\FDILink\FDI_send.c(406): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Velocity_data,buf,sizeof(External_Velocity_Packet_t));
-..\FDILink\FDI_send.c(412): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Body_Velocity_data,buf,sizeof(External_Body_Velocity_Packet_t));
-..\FDILink\FDI_send.c(418): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Heading_data,buf,sizeof(External_Heading_Packet_t));
-..\FDILink\FDI_send.c(424): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Time_data,buf,sizeof(External_Time_Packet_t));
-..\FDILink\FDI_send.c(430): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Depth_data,buf,sizeof(External_Depth_Packet_t));
-..\FDILink\FDI_send.c(436): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&External_Pitot_Pressure_data,buf,sizeof(External_Pitot_Pressure_Packet_t));
-..\FDILink\FDI_send.c(442): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(External_Air_Data_Packet_t));
-..\FDILink\FDI_send.c(448): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(External_LIDAR_Packet_t));
-..\FDILink\FDI_send.c(454): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(External_Odom_Data_Packet_t));
-..\FDILink\FDI_send.c(460): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(External_SLAM1_Packet_t));
-..\FDILink\FDI_send.c(466): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(External_SLAM2_Packet_t));
-..\FDILink\FDI_send.c(472): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Running_Time_Packet_t));
-..\FDILink\FDI_send.c(478): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Local_Magnetic_Field_Packet_t));
-..\FDILink\FDI_send.c(484): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Odometer_State_Packet_t));
-..\FDILink\FDI_send.c(490): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Geoid_Height_Packet_t));
-..\FDILink\FDI_send.c(496): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(RTCM_Corrections_Packet_t));
-..\FDILink\FDI_send.c(502): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Wind_Packet_t));
-..\FDILink\FDI_send.c(508): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Heave_Packet_t));
-..\FDILink\FDI_send.c(514): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Raw_Satellite_Data_Packet_t));
-..\FDILink\FDI_send.c(520): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(GNSS_DUAL_ANT_Data_Packet_t));
-..\FDILink\FDI_send.c(526): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Gimbal_State_Packet_t));
-..\FDILink\FDI_send.c(532): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Automotive_Packet_t));
-..\FDILink\FDI_send.c(538): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Installation_Alignment_Packet_t));
-..\FDILink\FDI_send.c(544): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Filter_Options_Packet_t));
-..\FDILink\FDI_send.c(550): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(GPIO_Configuration_Packet_t));
-..\FDILink\FDI_send.c(556): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Magnetic_Calibration_Values_Packet_t));
-..\FDILink\FDI_send.c(562): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Magnetic_Calibration_Configuration_Packet_t));
-..\FDILink\FDI_send.c(568): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Magnetic_Calibration_Status_Packet_t));
-..\FDILink\FDI_send.c(574): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Odometer_Configuration_Packet_t));
-..\FDILink\FDI_send.c(580): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Set_Zero_Orientation_Alignment_Packet_t));
-..\FDILink\FDI_send.c(586): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Reference_Point_Offsets_Packet_t));
-..\FDILink\FDI_send.c(592): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(User_Data_Packet_t));
-..\FDILink\FDI_send.c(598): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Baud_Rates_Packet_t));
-..\FDILink\FDI_send.c(604): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Sensor_Ranges_Packet_t));
-..\FDILink\FDI_send.c(610): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(GPIO_Output_Configuration_Packet_t));
-..\FDILink\FDI_send.c(616): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(GPIO_Input_Configuration_Packet_t));
-..\FDILink\FDI_send.c(622): warning:  #223-D: function "memcpy" declared implicitly
-  			memcpy(&data,buf,sizeof(Dual_Antenna_Configuration_Packet_t));
-..\FDILink\FDI_send.c(719): warning:  #940-D: missing return statement at end of non-void function "fdiSendExternalData" 
-  }
-..\FDILink\FDI_send.c(19): warning:  #177-D: variable "_FDILink"  was declared but never referenced
-  static FDILink_Status_t _FDILink;
-..\FDILink\FDI_send.c: 68 warnings, 0 errors
-compiling stm32h7xx_it.c...
-compiling main.c...
-compiling stm32h7xx_hal_msp.c...
+compiling taskinit.c...
 linking...
-Program Size: Code=20354 RO-data=2554 RW-data=64 ZI-data=14136  
+Program Size: Code=48532 RO-data=3740 RW-data=200 ZI-data=33736  
 FromELF: creating hex file...
-"FDI\FDI.axf" - 0 Error(s), 74 Warning(s).
+"FDI\FDI.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -208,7 +54,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Build Time Elapsed:  00:00:07
+Build Time Elapsed:  00:00:06
 </pre>
 </body>
 </html>
