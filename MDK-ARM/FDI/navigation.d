@@ -47,3 +47,4 @@ fdi\navigation.o: ../FDILink/fdilink_decode.h
 fdi\navigation.o: ../FDILink/FDI_send.h
 fdi\navigation.o: ../FDILink/FDI_config.h
 fdi\navigation.o: ../FDILink/FDI_Search_Function.h
+fdi\navigation.o: ../Core/Inc/main.h

@@ -22,6 +22,7 @@
 #include "stm32h7xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "navigation.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -279,9 +280,8 @@ void USART6_IRQHandler(void)
   {
     __HAL_UART_CLEAR_IDLEFLAG(&huart6);
 		HAL_UART_AbortReceive(&huart6);
-		int length = 256 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
-		fdiComProtocolReceive(&_FDILink, RxBuffer, length);
-		HAL_UART_Receive_DMA(&huart6, RxBuffer, 256);
+		NavRecLength = 400 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
+		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	}
   /* USER CODE END USART6_IRQn 1 */
 }

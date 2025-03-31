@@ -49,6 +49,7 @@ fdi\fatfs.o: ../FDILink/FDILink.h
 fdi\fatfs.o: ../FDILink/FDI_send.h
 fdi\fatfs.o: ../FDILink/FDI_config.h
 fdi\fatfs.o: ../FDILink/FDI_Search_Function.h
+fdi\fatfs.o: ../Core/Inc/main.h
 fdi\fatfs.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\fatfs.o: ../FATFS/Target/fatfs_platform.h
 fdi\fatfs.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

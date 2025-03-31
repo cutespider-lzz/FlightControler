@@ -9,6 +9,7 @@
 
 extern uint8_t NavRecBuff[400];
 extern uint8_t NavRecFifoBuff[400];
+extern uint16_t NavRecLength;
 
 extern FDILink_VersionData_Packet_t VersionData;
 extern FDILink_IMUData_Packet_t IMUData;
@@ -48,4 +49,6 @@ extern External_Pitot_Pressure_Packet_t External_Pitot_Pressure_data;
 
 extern FDILink_Status_t _FDILink;
 
+void NavigationReceive(void);
+	
 #endif

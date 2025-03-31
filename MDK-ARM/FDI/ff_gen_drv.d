@@ -50,6 +50,7 @@ fdi\ff_gen_drv.o: ../FDILink/FDILink.h
 fdi\ff_gen_drv.o: ../FDILink/FDI_send.h
 fdi\ff_gen_drv.o: ../FDILink/FDI_config.h
 fdi\ff_gen_drv.o: ../FDILink/FDI_Search_Function.h
+fdi\ff_gen_drv.o: ../Core/Inc/main.h
 fdi\ff_gen_drv.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\ff_gen_drv.o: ../FATFS/Target/fatfs_platform.h
 fdi\ff_gen_drv.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

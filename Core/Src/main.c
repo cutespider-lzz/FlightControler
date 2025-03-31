@@ -59,7 +59,7 @@ DMA_HandleTypeDef hdma_usart6_rx;
 
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
-uint8_t RxBuffer[256];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -127,9 +127,7 @@ int main(void)
   MX_TIM4_Init();
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
-	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
-  HAL_UART_Receive_DMA(&huart6, RxBuffer, 256);
-//	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
+
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */

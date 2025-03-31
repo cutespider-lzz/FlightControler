@@ -48,6 +48,7 @@ fdi\ccsbcs.o: ../FDILink/FDILink.h
 fdi\ccsbcs.o: ../FDILink/FDI_send.h
 fdi\ccsbcs.o: ../FDILink/FDI_config.h
 fdi\ccsbcs.o: ../FDILink/FDI_Search_Function.h
+fdi\ccsbcs.o: ../Core/Inc/main.h
 fdi\ccsbcs.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\ccsbcs.o: ../FATFS/Target/fatfs_platform.h
 fdi\ccsbcs.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

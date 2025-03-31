@@ -46,3 +46,4 @@ fdi\fdilink.o: ../FDILink/fdilink_decode.h
 fdi\fdilink.o: ../FDILink/FDI_send.h
 fdi\fdilink.o: ../FDILink/FDI_config.h
 fdi\fdilink.o: ../FDILink/FDI_Search_Function.h
+fdi\fdilink.o: ../Core/Inc/main.h

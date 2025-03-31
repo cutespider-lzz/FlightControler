@@ -45,3 +45,4 @@ fdi\stm32h7xx_hal_msp.o: ../FDILink/FDILink.h
 fdi\stm32h7xx_hal_msp.o: ../FDILink/FDI_send.h
 fdi\stm32h7xx_hal_msp.o: ../FDILink/FDI_config.h
 fdi\stm32h7xx_hal_msp.o: ../FDILink/FDI_Search_Function.h
+fdi\stm32h7xx_hal_msp.o: ../Core/Inc/main.h

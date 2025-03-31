@@ -2,16 +2,30 @@
 
 void TaskInit(void)
 {
-	//Create LEDTwink
-	LEDTwink_Ret = xTaskCreate((TaskFunction_t)LEDTwink,"LEDTwink",32,(void *)1,LEDTwink_Prio,(TaskHandle_t *)(&LEDTwink_TCB));
-	if(LEDTwink_Ret == pdPASS) ;
+	//Create LEDTwinkTask
+	LEDTwinkTask_Ret = xTaskCreate((TaskFunction_t)LEDTwinkTask,"LEDTwinkTask",32,(void *)1,LEDTwinkTask_Prio,(TaskHandle_t *)(&LEDTwinkTask_TCB));
+	if(LEDTwinkTask_Ret == pdPASS) ;
 	else
 	{
 		while(1) ;
 	}
-	//Create SDWrite
-	TFStorage_Ret = xTaskCreate((TaskFunction_t)TFStorage,"TFStorage",256,(void *)1,TFStorage_Prio,(TaskHandle_t *)(&TFStorage_TCB));
-	if(TFStorage_Ret == pdPASS) ;
+	//Create NavigationTask
+	NavigationTask_Ret = xTaskCreate((TaskFunction_t)NavigationTask,"NavigationTask",256,(void *)1,NavigationTask_Prio,(TaskHandle_t *)(&NavigationTask_TCB));
+	if(NavigationTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
+	//Create ControlTask
+	ControlTask_Ret = xTaskCreate((TaskFunction_t)ControlTask,"ControlTask",32,(void *)1,ControlTask_Prio,(TaskHandle_t *)(&ControlTask_TCB));
+	if(ControlTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
+	//Create TFStorageTask
+	TFStorageTask_Ret = xTaskCreate((TaskFunction_t)TFStorageTask,"TFStorageTask",256,(void *)1,TFStorageTask_Prio,(TaskHandle_t *)(&TFStorageTask_TCB));
+	if(TFStorageTask_Ret == pdPASS) ;
 	else
 	{
 		while(1) ;
@@ -22,12 +36,12 @@ void TaskInit(void)
 	vTaskStartScheduler();
 }
 
-//LEDTwink函数声明
-BaseType_t LEDTwink_Ret;
-UBaseType_t LEDTwink_Prio=2;
-TaskHandle_t LEDTwink_TCB;
+//LEDTwinkTask函数声明
+BaseType_t LEDTwinkTask_Ret;
+UBaseType_t LEDTwinkTask_Prio=2;
+TaskHandle_t LEDTwinkTask_TCB;
 
-void LEDTwink(void *pvParameters)
+void LEDTwinkTask(void *pvParameters)
 {
 	while(1)
 	{
@@ -36,43 +50,44 @@ void LEDTwink(void *pvParameters)
 	}
 }
 
-//TFStorage函数声明
-BaseType_t TFStorage_Ret;
-UBaseType_t TFStorage_Prio=12;
-TaskHandle_t TFStorage_TCB;
+//NavigationTask函数声明
+BaseType_t NavigationTask_Ret;
+UBaseType_t NavigationTask_Prio=25;
+TaskHandle_t NavigationTask_TCB;
 
-void TFStorage(void *pvParameters)
+void NavigationTask(void *pvParameters)
 {
-	TFRet = f_mount(&SDFatFS,SDPath,1);
-	if(TFRet != FR_OK)
+	while(1)
 	{
-		switch(TFRet)
-		{
-			case FR_NO_FILESYSTEM:
-				TFRet = f_mkfs(SDPath,FM_FAT32,0,work,_MAX_SS);
-				if(TFRet==FR_OK) 
-				{
-					TFRet = f_mount(&SDFatFS,SDPath,1);
-					if(TFRet == FR_OK) ;
-					else
-					{
-						while(1) ;
-					}
-				}
-				break;
-			default:
-				while(1) ;
-		}
+		NavigationReceive();
 	}
-	else if(retSD == FR_OK) 
+}
+
+//ControlTask函数声明
+BaseType_t ControlTask_Ret;
+UBaseType_t ControlTask_Prio;
+TaskHandle_t ControlTask_TCB;
+
+void ControlTask(void *pvParameters)
+{
+	while(1)
 	{
-		f_open(&SDFile,"TF test.txt",FA_WRITE|FA_OPEN_APPEND);
-		f_printf(&SDFile,"TF write test!\n");
-		f_close(&SDFile);
+		vTaskDelay(200);
 	}
+}
+	
+
+//TFStorageTask函数声明
+BaseType_t TFStorageTask_Ret;
+UBaseType_t TFStorageTask_Prio=12;
+TaskHandle_t TFStorageTask_TCB;
+
+void TFStorageTask(void *pvParameters)
+{
+	TFInit();
 	vTaskSuspend(NULL);
 	while(1)
 	{
-			
+		
 	}
 }

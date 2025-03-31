@@ -45,6 +45,7 @@ fdi\main.o: ../FDILink/FDILink.h
 fdi\main.o: ../FDILink/FDI_send.h
 fdi\main.o: ../FDILink/FDI_config.h
 fdi\main.o: ../FDILink/FDI_Search_Function.h
+fdi\main.o: ../Core/Inc/main.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 fdi\main.o: ../Core/Inc/FreeRTOSConfig.h
@@ -72,3 +73,5 @@ fdi\main.o: ../FATFS/Target/sd_diskio.h
 fdi\main.o: ../Code/Inc/taskinit.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\main.o: ../Code/Inc/tf.h
+fdi\main.o: ../Code/Inc/navigation.h
+fdi\main.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

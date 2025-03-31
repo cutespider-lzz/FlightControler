@@ -2,6 +2,7 @@
 
 uint8_t NavRecBuff[400];
 uint8_t NavRecFifoBuff[400];
+uint16_t NavRecLength;
 
 FDILink_VersionData_Packet_t VersionData;
 FDILink_IMUData_Packet_t IMUData;
@@ -41,4 +42,12 @@ External_Pitot_Pressure_Packet_t External_Pitot_Pressure_data;
 
 FDILink_Status_t _FDILink;
 
-
+void NavigationReceive(void)
+{
+	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
+  HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
+	while(1)
+	{
+		fdiComProtocolReceive(&_FDILink, NavRecBuff, NavRecLength);
+	}
+}

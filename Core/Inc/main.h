@@ -36,17 +36,29 @@ extern "C" {
 #include "FDI_send.h"
 #include "FDI_config.h"
 #include "FDI_Search_Function.h"
+#include "main.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-extern uint8_t RxBuffer[];
-extern FDILink_Status_t _FDILink;
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
+extern SD_HandleTypeDef hsd1;
 
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim4;
+
+extern UART_HandleTypeDef huart8;
+extern UART_HandleTypeDef huart1;
+extern UART_HandleTypeDef huart2;
+extern UART_HandleTypeDef huart6;
+extern DMA_HandleTypeDef hdma_uart8_tx;
+extern DMA_HandleTypeDef hdma_uart8_rx;
+extern DMA_HandleTypeDef hdma_usart2_rx;
+extern DMA_HandleTypeDef hdma_usart6_rx;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

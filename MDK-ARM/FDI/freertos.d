@@ -54,3 +54,4 @@ fdi\freertos.o: ../FDILink/FDILink.h
 fdi\freertos.o: ../FDILink/FDI_send.h
 fdi\freertos.o: ../FDILink/FDI_config.h
 fdi\freertos.o: ../FDILink/FDI_Search_Function.h
+fdi\freertos.o: ../Core/Inc/main.h

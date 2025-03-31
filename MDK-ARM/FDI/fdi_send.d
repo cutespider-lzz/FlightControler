@@ -45,5 +45,6 @@ fdi\fdi_send.o: ../FDILink/FDILink.h
 fdi\fdi_send.o: ../FDILink/FDI_send.h
 fdi\fdi_send.o: ../FDILink/FDI_config.h
 fdi\fdi_send.o: ../FDILink/FDI_Search_Function.h
+fdi\fdi_send.o: ../Core/Inc/main.h
 fdi\fdi_send.o: ../Code/Inc/navigation.h
 fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

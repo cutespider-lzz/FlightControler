@@ -45,4 +45,7 @@ fdi\stm32h7xx_it.o: ../FDILink/FDILink.h
 fdi\stm32h7xx_it.o: ../FDILink/FDI_send.h
 fdi\stm32h7xx_it.o: ../FDILink/FDI_config.h
 fdi\stm32h7xx_it.o: ../FDILink/FDI_Search_Function.h
+fdi\stm32h7xx_it.o: ../Core/Inc/main.h
 fdi\stm32h7xx_it.o: ../Core/Inc/stm32h7xx_it.h
+fdi\stm32h7xx_it.o: ../Code/Inc/navigation.h
+fdi\stm32h7xx_it.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
