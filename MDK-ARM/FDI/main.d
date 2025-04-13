@@ -40,11 +40,11 @@ fdi\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\main.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\main.o: ../FDILink/fdilink_decode.h
-fdi\main.o: ../FDILink/FDILink.h
-fdi\main.o: ../FDILink/FDI_send.h
-fdi\main.o: ../FDILink/FDI_config.h
-fdi\main.o: ../FDILink/FDI_Search_Function.h
+fdi\main.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\main.o: ..\HardWare\FDILink\FDILink.h
+fdi\main.o: ..\HardWare\FDILink\FDI_send.h
+fdi\main.o: ..\HardWare\FDILink\FDI_config.h
+fdi\main.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\main.o: ../Core/Inc/main.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

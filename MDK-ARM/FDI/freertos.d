@@ -49,9 +49,9 @@ fdi\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\freertos.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\freertos.o: ../FDILink/fdilink_decode.h
-fdi\freertos.o: ../FDILink/FDILink.h
-fdi\freertos.o: ../FDILink/FDI_send.h
-fdi\freertos.o: ../FDILink/FDI_config.h
-fdi\freertos.o: ../FDILink/FDI_Search_Function.h
+fdi\freertos.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\freertos.o: ..\HardWare\FDILink\FDILink.h
+fdi\freertos.o: ..\HardWare\FDILink\FDI_send.h
+fdi\freertos.o: ..\HardWare\FDILink\FDI_config.h
+fdi\freertos.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\freertos.o: ../Core/Inc/main.h

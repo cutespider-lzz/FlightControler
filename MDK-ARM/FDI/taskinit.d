@@ -41,11 +41,11 @@ fdi\taskinit.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\taskinit.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\taskinit.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\taskinit.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\taskinit.o: ../FDILink/fdilink_decode.h
-fdi\taskinit.o: ../FDILink/FDILink.h
-fdi\taskinit.o: ../FDILink/FDI_send.h
-fdi\taskinit.o: ../FDILink/FDI_config.h
-fdi\taskinit.o: ../FDILink/FDI_Search_Function.h
+fdi\taskinit.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\taskinit.o: ..\HardWare\FDILink\FDILink.h
+fdi\taskinit.o: ..\HardWare\FDILink\FDI_send.h
+fdi\taskinit.o: ..\HardWare\FDILink\FDI_config.h
+fdi\taskinit.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\taskinit.o: ../Core/Inc/main.h
 fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

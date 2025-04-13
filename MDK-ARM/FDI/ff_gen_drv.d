@@ -45,11 +45,11 @@ fdi\ff_gen_drv.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\ff_gen_drv.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\ff_gen_drv.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\ff_gen_drv.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\ff_gen_drv.o: ../FDILink/fdilink_decode.h
-fdi\ff_gen_drv.o: ../FDILink/FDILink.h
-fdi\ff_gen_drv.o: ../FDILink/FDI_send.h
-fdi\ff_gen_drv.o: ../FDILink/FDI_config.h
-fdi\ff_gen_drv.o: ../FDILink/FDI_Search_Function.h
+fdi\ff_gen_drv.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\ff_gen_drv.o: ..\HardWare\FDILink\FDILink.h
+fdi\ff_gen_drv.o: ..\HardWare\FDILink\FDI_send.h
+fdi\ff_gen_drv.o: ..\HardWare\FDILink\FDI_config.h
+fdi\ff_gen_drv.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\ff_gen_drv.o: ../Core/Inc/main.h
 fdi\ff_gen_drv.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\ff_gen_drv.o: ../FATFS/Target/fatfs_platform.h

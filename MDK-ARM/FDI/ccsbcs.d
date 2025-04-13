@@ -43,11 +43,11 @@ fdi\ccsbcs.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\ccsbcs.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\ccsbcs.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\ccsbcs.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\ccsbcs.o: ../FDILink/fdilink_decode.h
-fdi\ccsbcs.o: ../FDILink/FDILink.h
-fdi\ccsbcs.o: ../FDILink/FDI_send.h
-fdi\ccsbcs.o: ../FDILink/FDI_config.h
-fdi\ccsbcs.o: ../FDILink/FDI_Search_Function.h
+fdi\ccsbcs.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\ccsbcs.o: ..\HardWare\FDILink\FDILink.h
+fdi\ccsbcs.o: ..\HardWare\FDILink\FDI_send.h
+fdi\ccsbcs.o: ..\HardWare\FDILink\FDI_config.h
+fdi\ccsbcs.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\ccsbcs.o: ../Core/Inc/main.h
 fdi\ccsbcs.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\ccsbcs.o: ../FATFS/Target/fatfs_platform.h

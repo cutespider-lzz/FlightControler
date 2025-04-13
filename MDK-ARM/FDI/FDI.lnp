@@ -32,9 +32,6 @@
 "fdi\stm32h7xx_hal_uart.o"
 "fdi\stm32h7xx_hal_uart_ex.o"
 "fdi\system_stm32h7xx.o"
-"fdi\crc_table.o"
-"fdi\fdilink.o"
-"fdi\fdi_send.o"
 "fdi\bsp_driver_sd.o"
 "fdi\sd_diskio.o"
 "fdi\fatfs_platform.o"
@@ -60,6 +57,12 @@
 "fdi\taskinit.o"
 "fdi\telemetry.o"
 "fdi\tf.o"
+"fdi\receiver.o"
+"fdi\crc_table.o"
+"fdi\fdi_send.o"
+"fdi\fdilink.o"
+"fdi\jy901b.o"
+"fdi\siyi.o"
 --strict --scatter "FDI\FDI.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

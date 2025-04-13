@@ -40,11 +40,11 @@ fdi\stm32h7xx_it.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\stm32h7xx_it.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\stm32h7xx_it.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\stm32h7xx_it.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\stm32h7xx_it.o: ../FDILink/fdilink_decode.h
-fdi\stm32h7xx_it.o: ../FDILink/FDILink.h
-fdi\stm32h7xx_it.o: ../FDILink/FDI_send.h
-fdi\stm32h7xx_it.o: ../FDILink/FDI_config.h
-fdi\stm32h7xx_it.o: ../FDILink/FDI_Search_Function.h
+fdi\stm32h7xx_it.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\stm32h7xx_it.o: ..\HardWare\FDILink\FDILink.h
+fdi\stm32h7xx_it.o: ..\HardWare\FDILink\FDI_send.h
+fdi\stm32h7xx_it.o: ..\HardWare\FDILink\FDI_config.h
+fdi\stm32h7xx_it.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\stm32h7xx_it.o: ../Core/Inc/main.h
 fdi\stm32h7xx_it.o: ../Core/Inc/stm32h7xx_it.h
 fdi\stm32h7xx_it.o: ../Code/Inc/navigation.h

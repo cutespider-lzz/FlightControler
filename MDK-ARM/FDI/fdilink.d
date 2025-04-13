@@ -1,5 +1,5 @@
-fdi\fdilink.o: ..\FDILink\FDILink.c
-fdi\fdilink.o: ..\FDILink\FDILink.h
+fdi\fdilink.o: ..\HardWare\FDILink\FDILink.c
+fdi\fdilink.o: ..\HardWare\FDILink\FDILink.h
 fdi\fdilink.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 fdi\fdilink.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
 fdi\fdilink.o: ../Core/Inc/main.h
@@ -42,8 +42,8 @@ fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\fdilink.o: ../FDILink/fdilink_decode.h
-fdi\fdilink.o: ../FDILink/FDI_send.h
-fdi\fdilink.o: ../FDILink/FDI_config.h
-fdi\fdilink.o: ../FDILink/FDI_Search_Function.h
+fdi\fdilink.o: ..\HardWare\FDILink\fdilink_decode.h
+fdi\fdilink.o: ..\HardWare\FDILink\FDI_send.h
+fdi\fdilink.o: ..\HardWare\FDILink\FDI_config.h
+fdi\fdilink.o: ..\HardWare\FDILink\FDI_Search_Function.h
 fdi\fdilink.o: ../Core/Inc/main.h
