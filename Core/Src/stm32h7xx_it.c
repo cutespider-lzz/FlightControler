@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "navigation.h"
+#include "receiver.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,10 +58,12 @@
 
 /* External variables --------------------------------------------------------*/
 extern SD_HandleTypeDef hsd1;
+extern DMA_HandleTypeDef hdma_uart5_rx;
 extern DMA_HandleTypeDef hdma_uart8_tx;
 extern DMA_HandleTypeDef hdma_uart8_rx;
 extern DMA_HandleTypeDef hdma_usart2_rx;
 extern DMA_HandleTypeDef hdma_usart6_rx;
+extern UART_HandleTypeDef huart5;
 extern UART_HandleTypeDef huart8;
 extern UART_HandleTypeDef huart2;
 extern UART_HandleTypeDef huart6;
@@ -225,6 +228,20 @@ void DMA1_Stream3_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles DMA1 stream4 global interrupt.
+  */
+void DMA1_Stream4_IRQHandler(void)
+{
+  /* USER CODE BEGIN DMA1_Stream4_IRQn 0 */
+
+  /* USER CODE END DMA1_Stream4_IRQn 0 */
+  HAL_DMA_IRQHandler(&hdma_uart5_rx);
+  /* USER CODE BEGIN DMA1_Stream4_IRQn 1 */
+
+  /* USER CODE END DMA1_Stream4_IRQn 1 */
+}
+
+/**
   * @brief This function handles TIM1 update interrupt.
   */
 void TIM1_UP_IRQHandler(void)
@@ -264,6 +281,29 @@ void SDMMC1_IRQHandler(void)
   /* USER CODE BEGIN SDMMC1_IRQn 1 */
 
   /* USER CODE END SDMMC1_IRQn 1 */
+}
+
+/**
+  * @brief This function handles UART5 global interrupt.
+  */
+void UART5_IRQHandler(void)
+{
+  /* USER CODE BEGIN UART5_IRQn 0 */
+
+  /* USER CODE END UART5_IRQn 0 */
+  HAL_UART_IRQHandler(&huart5);
+  /* USER CODE BEGIN UART5_IRQn 1 */
+	if(__HAL_UART_GET_FLAG(&huart5,UART_FLAG_IDLE)==SET)
+	{
+		__HAL_UART_CLEAR_IDLEFLAG(&huart5);
+		HAL_UART_AbortReceive(&huart5);
+		memcpy(ReceiverFifoBuff,ReceiverReceiveBuff,25);
+		memset(ReceiverReceiveBuff,0,25);
+		HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);		
+//		xSemaphoreGiveFromISR(ReceiverSemaphore,&ReceiverHigherTaskSwitch);
+//		portYIELD_FROM_ISR(ReceiverHigherTaskSwitch);
+	}
+  /* USER CODE END UART5_IRQn 1 */
 }
 
 /**

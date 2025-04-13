@@ -45,11 +45,11 @@ fdi\diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\diskio.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\diskio.o: ..\HardWare\FDILink\fdilink_decode.h
-fdi\diskio.o: ..\HardWare\FDILink\FDILink.h
-fdi\diskio.o: ..\HardWare\FDILink\FDI_send.h
-fdi\diskio.o: ..\HardWare\FDILink\FDI_config.h
-fdi\diskio.o: ..\HardWare\FDILink\FDI_Search_Function.h
+fdi\diskio.o: ../HardWare/FDILink/fdilink_decode.h
+fdi\diskio.o: ../HardWare/FDILink/FDILink.h
+fdi\diskio.o: ../HardWare/FDILink/FDI_send.h
+fdi\diskio.o: ../HardWare/FDILink/FDI_config.h
+fdi\diskio.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\diskio.o: ../Core/Inc/main.h
 fdi\diskio.o: ../FATFS/Target/bsp_driver_sd.h
 fdi\diskio.o: ../FATFS/Target/fatfs_platform.h

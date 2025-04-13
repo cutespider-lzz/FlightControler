@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'FDI' 
- * Target:  'FDI' 
+ * Project: 'FlightControler' 
+ * Target:  'FlightControler' 
  */
 
 #ifndef RTE_COMPONENTS_H

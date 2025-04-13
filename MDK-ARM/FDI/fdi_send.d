@@ -40,11 +40,11 @@ fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\fdi_send.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\fdi_send.o: ..\HardWare\FDILink\fdilink_decode.h
-fdi\fdi_send.o: ..\HardWare\FDILink\FDILink.h
-fdi\fdi_send.o: ..\HardWare\FDILink\FDI_send.h
-fdi\fdi_send.o: ..\HardWare\FDILink\FDI_config.h
-fdi\fdi_send.o: ..\HardWare\FDILink\FDI_Search_Function.h
+fdi\fdi_send.o: ../HardWare/FDILink/fdilink_decode.h
+fdi\fdi_send.o: ../HardWare/FDILink/FDILink.h
+fdi\fdi_send.o: ../HardWare/FDILink/FDI_send.h
+fdi\fdi_send.o: ../HardWare/FDILink/FDI_config.h
+fdi\fdi_send.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\fdi_send.o: ../Core/Inc/main.h
 fdi\fdi_send.o: ../Code/Inc/navigation.h
 fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

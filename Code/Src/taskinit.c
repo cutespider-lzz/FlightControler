@@ -9,6 +9,13 @@ void TaskInit(void)
 	{
 		while(1) ;
 	}
+	//Create ReceiverTask
+	ReceiverTask_Ret = xTaskCreate((TaskFunction_t)ReceiverTask,"ReceiverTask",256,(void *)1,ReceiverTask_Prio,(TaskHandle_t *)(&ReceiverTask_TCB));
+	if(ReceiverTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
 	//Create NavigationTask
 	NavigationTask_Ret = xTaskCreate((TaskFunction_t)NavigationTask,"NavigationTask",256,(void *)1,NavigationTask_Prio,(TaskHandle_t *)(&NavigationTask_TCB));
 	if(NavigationTask_Ret == pdPASS) ;
@@ -47,6 +54,21 @@ void LEDTwinkTask(void *pvParameters)
 	{
 		HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
 		vTaskDelay(100);
+	}
+}
+
+//ReceiverTask函数声明
+BaseType_t ReceiverTask_Ret;
+UBaseType_t ReceiverTask_Prio=25;
+TaskHandle_t ReceiverTask_TCB;
+
+void ReceiverTask(void *pvParameters)
+{
+	HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);
+	__HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);
+	while(1)
+	{
+		
 	}
 }
 

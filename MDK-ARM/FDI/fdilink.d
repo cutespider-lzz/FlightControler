@@ -42,8 +42,8 @@ fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h
 fdi\fdilink.o: ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
-fdi\fdilink.o: ..\HardWare\FDILink\fdilink_decode.h
-fdi\fdilink.o: ..\HardWare\FDILink\FDI_send.h
-fdi\fdilink.o: ..\HardWare\FDILink\FDI_config.h
-fdi\fdilink.o: ..\HardWare\FDILink\FDI_Search_Function.h
+fdi\fdilink.o: ../HardWare/FDILink/fdilink_decode.h
+fdi\fdilink.o: ../HardWare/FDILink/FDI_send.h
+fdi\fdilink.o: ../HardWare/FDILink/FDI_config.h
+fdi\fdilink.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\fdilink.o: ../Core/Inc/main.h

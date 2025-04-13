@@ -5,6 +5,7 @@
 #include "cmsis_os.h"
 #include "fatfs.h"
 #include "tf.h"
+#include "receiver.h"
 #include "navigation.h"
 
 //任务初始化
@@ -16,6 +17,13 @@ extern UBaseType_t LEDTwinkTask_Prio;
 extern TaskHandle_t LEDTwinkTask_TCB;
 
 void LEDTwinkTask(void *pvParameters);
+
+//ReceiverTask函数声明
+extern BaseType_t ReceiverTask_Ret;
+extern UBaseType_t ReceiverTask_Prio;
+extern TaskHandle_t ReceiverTask_TCB;
+
+void ReceiverTask(void *pvParameters);
 
 //NavigationTask函数声明
 extern BaseType_t NavigationTask_Ret;

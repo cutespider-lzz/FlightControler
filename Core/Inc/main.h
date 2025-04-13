@@ -51,6 +51,7 @@ extern SD_HandleTypeDef hsd1;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim4;
 
+extern UART_HandleTypeDef huart5;
 extern UART_HandleTypeDef huart8;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
@@ -59,6 +60,7 @@ extern DMA_HandleTypeDef hdma_uart8_tx;
 extern DMA_HandleTypeDef hdma_uart8_rx;
 extern DMA_HandleTypeDef hdma_usart2_rx;
 extern DMA_HandleTypeDef hdma_usart6_rx;
+
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
