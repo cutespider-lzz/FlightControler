@@ -59,11 +59,12 @@ void LEDTwinkTask(void *pvParameters)
 
 //ReceiverTask函数声明
 BaseType_t ReceiverTask_Ret;
-UBaseType_t ReceiverTask_Prio=25;
+UBaseType_t ReceiverTask_Prio=18;
 TaskHandle_t ReceiverTask_TCB;
 
 void ReceiverTask(void *pvParameters)
 {
+	ReceiverSemaphore = xSemaphoreCreateBinary();
 	HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);
 	__HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);
 	while(1)

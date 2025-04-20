@@ -300,8 +300,8 @@ void UART5_IRQHandler(void)
 		memcpy(ReceiverFifoBuff,ReceiverReceiveBuff,25);
 		memset(ReceiverReceiveBuff,0,25);
 		HAL_UART_Receive_DMA(&huart5,ReceiverReceiveBuff,25);		
-//		xSemaphoreGiveFromISR(ReceiverSemaphore,&ReceiverHigherTaskSwitch);
-//		portYIELD_FROM_ISR(ReceiverHigherTaskSwitch);
+		xSemaphoreGiveFromISR(ReceiverSemaphore,&ReceiverHigherTaskSwitch);
+		portYIELD_FROM_ISR(ReceiverHigherTaskSwitch);
 	}
   /* USER CODE END UART5_IRQn 1 */
 }
