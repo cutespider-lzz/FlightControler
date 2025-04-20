@@ -80,6 +80,7 @@ TaskHandle_t NavigationTask_TCB;
 
 void NavigationTask(void *pvParameters)
 {
+	vTaskSuspend(NULL);
 	while(1)
 	{
 		NavigationReceive();
