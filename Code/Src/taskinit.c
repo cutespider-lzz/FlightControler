@@ -70,7 +70,11 @@ void ReceiverTask(void *pvParameters)
 	while(1)
 	{
 		xSemaphoreTake(ReceiverSemaphore,100);
-		ReceiverDataConvert(ReceiverFifoBuff);
+		ReceiverRet = ReceiverDataConvert(ReceiverFifoBuff);
+		if(ReceiverRet == Receiver_OK)
+		{
+			ReceiverSolution();
+		}
 	}
 }
 

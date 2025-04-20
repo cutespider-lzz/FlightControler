@@ -62,3 +62,4 @@ fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 fdi\receiver.o: ../HardWare/SIYI/siyi.h
+fdi\receiver.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

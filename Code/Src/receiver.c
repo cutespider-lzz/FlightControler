@@ -1,5 +1,6 @@
 #include "receiver.h"
 #include "siyi.h"
+#include "string.h"
 
 uint8_t ReceiverReceiveBuff[25];//Receiver接收缓存数组
 uint8_t ReceiverFifoBuff[25];//Receiver数据处理数组，缓存数组接收数据后保存至处理数组中
@@ -10,6 +11,8 @@ uint16_t ReceiverChannelNeutral[16] = {1500,1500,1000,1500,1000,1000,1000,1500,1
 
 SemaphoreHandle_t ReceiverSemaphore;//Receiver二值信号量
 BaseType_t ReceiverHigherTaskSwitch;
+
+ReceiverStatus ReceiverRet;//接收机接收数据状态变量
 
 ReceiverStatus ReceiverDataConvert(uint8_t *ReceiverBuff)
 {
@@ -33,10 +36,11 @@ ReceiverStatus ReceiverDataConvert(uint8_t *ReceiverBuff)
 		ReceiverChannel[13] = ((uint16_t)((ReceiverBuff[18]&0x80)>>7))|(((uint16_t)ReceiverBuff[19])<<1)|(((uint16_t)(ReceiverBuff[20]&0x03))<<9);
 		ReceiverChannel[14] = ((uint16_t)((ReceiverBuff[20]&0xfc)>>2))|(((uint16_t)(ReceiverBuff[21]&0x1f))<<6);
 		ReceiverChannel[15] = ((uint16_t)((ReceiverBuff[21]&0xe0)>>5))|(((uint16_t)ReceiverBuff[22])<<3);
-//		for(n=0;n<16;n++)
-//		{
-//			ReceiverChannel[n] = (ReceiverChannel[n]-ReceiverChannelMin)*1.0/(ReceiverChannelMax-ReceiverChannelMin)*1000+1000;
-//		}
+		for(n=0;n<16;n++)
+		{
+			ReceiverChannel[n] = (ReceiverChannel[n]-ReceiverChannelMin)*1.0/(ReceiverChannelMax-ReceiverChannelMin)*1000+1000;
+		}
+		memset(ReceiverFifoBuff,0,25);
 		return Receiver_OK;
 	}
 	else 
