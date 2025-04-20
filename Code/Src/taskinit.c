@@ -68,7 +68,8 @@ void ReceiverTask(void *pvParameters)
 	__HAL_UART_ENABLE_IT(&huart5,UART_IT_IDLE);
 	while(1)
 	{
-		
+		xSemaphoreTake(ReceiverSemaphore,100);
+		ReceiverDataConvert(ReceiverFifoBuff);
 	}
 }
 
