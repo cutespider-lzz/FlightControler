@@ -48,3 +48,17 @@ fdi\navigation.o: ../HardWare/FDILink/FDI_send.h
 fdi\navigation.o: ../HardWare/FDILink/FDI_config.h
 fdi\navigation.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\navigation.o: ../Core/Inc/main.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+fdi\navigation.o: ../Core/Inc/FreeRTOSConfig.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+fdi\navigation.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

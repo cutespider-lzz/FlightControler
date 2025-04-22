@@ -58,6 +58,7 @@
 
 /* External variables --------------------------------------------------------*/
 extern SD_HandleTypeDef hsd1;
+extern TIM_HandleTypeDef htim3;
 extern DMA_HandleTypeDef hdma_uart5_rx;
 extern DMA_HandleTypeDef hdma_uart8_tx;
 extern DMA_HandleTypeDef hdma_uart8_rx;
@@ -256,6 +257,20 @@ void TIM1_UP_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles TIM3 global interrupt.
+  */
+void TIM3_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM3_IRQn 0 */
+
+  /* USER CODE END TIM3_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim3);
+  /* USER CODE BEGIN TIM3_IRQn 1 */
+	
+  /* USER CODE END TIM3_IRQn 1 */
+}
+
+/**
   * @brief This function handles USART2 global interrupt.
   */
 void USART2_IRQHandler(void)
@@ -321,6 +336,7 @@ void USART6_IRQHandler(void)
     __HAL_UART_CLEAR_IDLEFLAG(&huart6);
 		HAL_UART_AbortReceive(&huart6);
 		NavRecLength = 400 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
+		memcpy(NavRecFifoBuff,NavRecBuff,NavRecLength);
 		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	}
   /* USER CODE END USART6_IRQn 1 */

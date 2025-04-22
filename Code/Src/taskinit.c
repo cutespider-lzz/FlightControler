@@ -1,4 +1,5 @@
 #include "taskinit.h"
+#include "cmsis_os.h"
 
 void TaskInit(void)
 {
@@ -37,9 +38,6 @@ void TaskInit(void)
 	{
 		while(1) ;
 	}
-	
-	
-	
 	vTaskStartScheduler();
 }
 
@@ -85,9 +83,12 @@ TaskHandle_t NavigationTask_TCB;
 
 void NavigationTask(void *pvParameters)
 {
-	vTaskSuspend(NULL);
+	NavQueue = xQueueCreate(400,sizeof(uint8_t));
+	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
+  HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	while(1)
 	{
+		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
 		NavigationReceive();
 	}
 }
@@ -99,9 +100,11 @@ TaskHandle_t ControlTask_TCB;
 
 void ControlTask(void *pvParameters)
 {
+	ControlInit();
 	while(1)
 	{
-		vTaskDelay(200);
+		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
+		MYZControl();
 	}
 }
 	
@@ -114,9 +117,8 @@ TaskHandle_t TFStorageTask_TCB;
 void TFStorageTask(void *pvParameters)
 {
 	TFInit();
-	vTaskSuspend(NULL);
 	while(1)
 	{
-		
+		xTaskGetTickCount();
 	}
 }

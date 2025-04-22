@@ -76,3 +76,7 @@ fdi\taskinit.o: ../Code/Inc/receiver.h
 fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\taskinit.o: ../Code/Inc/navigation.h
 fdi\taskinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\taskinit.o: ../Code/Inc/control.h
+fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\taskinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

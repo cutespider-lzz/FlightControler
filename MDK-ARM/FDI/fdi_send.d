@@ -48,3 +48,17 @@ fdi\fdi_send.o: ../HardWare/FDILink/FDI_Search_Function.h
 fdi\fdi_send.o: ../Core/Inc/main.h
 fdi\fdi_send.o: ../Code/Inc/navigation.h
 fdi\fdi_send.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+fdi\fdi_send.o: ../Core/Inc/FreeRTOSConfig.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+fdi\fdi_send.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

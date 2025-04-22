@@ -49,7 +49,6 @@ fdi\stm32h7xx_it.o: ../Core/Inc/main.h
 fdi\stm32h7xx_it.o: ../Core/Inc/stm32h7xx_it.h
 fdi\stm32h7xx_it.o: ../Code/Inc/navigation.h
 fdi\stm32h7xx_it.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
-fdi\stm32h7xx_it.o: ../Code/Inc/receiver.h
 fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 fdi\stm32h7xx_it.o: ../Core/Inc/FreeRTOSConfig.h
@@ -64,3 +63,5 @@ fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
+fdi\stm32h7xx_it.o: ../Code/Inc/receiver.h
+fdi\stm32h7xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

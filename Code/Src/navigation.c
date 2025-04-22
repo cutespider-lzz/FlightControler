@@ -42,12 +42,11 @@ External_Pitot_Pressure_Packet_t External_Pitot_Pressure_data;
 
 FDILink_Status_t _FDILink;
 
+QueueHandle_t NavQueue;
+SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
+BaseType_t NavHigherTaskSwitch;
+
 void NavigationReceive(void)
 {
-	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
-  HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
-	while(1)
-	{
-		fdiComProtocolReceive(&_FDILink, NavRecBuff, NavRecLength);
-	}
+	fdiComProtocolReceive(&_FDILink, NavRecFifoBuff, NavRecLength);
 }

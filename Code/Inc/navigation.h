@@ -6,6 +6,7 @@
 #include "main.h"
 #include "fdilink_decode.h"
 #include "FDI_config.h"
+#include "cmsis_os.h"
 
 extern uint8_t NavRecBuff[400];
 extern uint8_t NavRecFifoBuff[400];
@@ -48,6 +49,10 @@ extern External_Depth_Packet_t External_Depth_data;
 extern External_Pitot_Pressure_Packet_t External_Pitot_Pressure_data;
 
 extern FDILink_Status_t _FDILink;
+
+extern QueueHandle_t NavQueue;
+extern SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
+extern BaseType_t NavHigherTaskSwitch;
 
 void NavigationReceive(void);
 	

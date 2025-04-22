@@ -7,6 +7,7 @@
 #include "tf.h"
 #include "receiver.h"
 #include "navigation.h"
+#include "control.h"
 
 //任务初始化
 void TaskInit(void);

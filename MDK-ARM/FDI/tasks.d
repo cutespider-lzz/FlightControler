@@ -14,3 +14,4 @@ fdi\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 fdi\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 fdi\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 fdi\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h
+fdi\tasks.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
