@@ -46,7 +46,7 @@ QueueHandle_t NavQueue;
 SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
 BaseType_t NavHigherTaskSwitch;
 
-void NavigationReceive(void)
+void NavigationSolution(void)
 {
 	fdiComProtocolReceive(&_FDILink, NavRecFifoBuff, NavRecLength);
 }

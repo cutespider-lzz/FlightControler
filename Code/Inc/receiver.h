@@ -20,6 +20,7 @@ extern uint8_t ReceiverReceiveBuff[];//Receiver接收缓存数组
 extern uint8_t ReceiverFifoBuff[];//Receiver数据处理数组，缓存数组接收数据后保存至处理数组中
 
 extern uint16_t ReceiverChannel[];//Receiver接收通道数据
+extern uint16_t ReceiverChannelNeutral[];//接收机通道中立位置
 
 extern SemaphoreHandle_t ReceiverSemaphore;//Receiver二值信号量
 extern BaseType_t ReceiverHigherTaskSwitch;

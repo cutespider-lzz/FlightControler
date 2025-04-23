@@ -54,6 +54,6 @@ extern QueueHandle_t NavQueue;
 extern SemaphoreHandle_t NavSemaphore;//导航任务二值信号量
 extern BaseType_t NavHigherTaskSwitch;
 
-void NavigationReceive(void);
+void NavigationSolution(void);
 	
 #endif

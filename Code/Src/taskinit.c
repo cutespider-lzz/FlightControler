@@ -83,13 +83,13 @@ TaskHandle_t NavigationTask_TCB;
 
 void NavigationTask(void *pvParameters)
 {
-	NavQueue = xQueueCreate(400,sizeof(uint8_t));
+//	NavQueue = xQueueCreate(400,sizeof(uint8_t));
 	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
   HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	while(1)
 	{
 		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
-		NavigationReceive();
+		NavigationSolution();
 	}
 }
 

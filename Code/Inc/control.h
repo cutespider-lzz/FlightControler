@@ -3,12 +3,8 @@
 
 #include "main.h"
 #include "cmsis_os.h"
-
-extern float ControlTime;
-extern const float ControlDt;
-
-extern SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
-extern BaseType_t ControlHigherTaskSwitch;
+#include "navigation.h"
+#include "receiver.h"
 
 typedef enum
 {
@@ -21,6 +17,29 @@ typedef enum
 	ServoChannel_7,
 	ServoChannel_8,
 }ServoChannel;
+
+typedef enum
+{
+	FMU_Manual,
+	FMU_Stable,
+	FMU_Height,
+	FMU_Path,
+	FMU_Return
+}FMUControlModeEnum;
+
+extern float ControlTime;
+extern const float ControlDt;
+
+extern SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
+extern BaseType_t ControlHigherTaskSwitch;
+
+extern const double Kp_roll,Ki_roll,Kd_roll,Kp_pitch,Ki_pitch,Kd_pitch,Kp_yaw,Ki_yaw,Kd_yaw;//姿态控制参数
+extern double expected_roll,expected_pitch,expected_yaw,expected_height;//各通道期望值
+extern double servo_roll,servo_pitch,servo_yaw;//对应通道角度
+extern double integtal_roll,integtal_pitch;//俯仰角误差积分
+extern FMUControlModeEnum FMUControlMode;//飞控工作模式选择
+
+
 
 void ServoSet(ServoChannel channel,double angle);
 void ControlInit(void);
