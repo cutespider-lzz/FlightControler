@@ -63,3 +63,7 @@ fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 fdi\receiver.o: ../HardWare/SIYI/siyi.h
 fdi\receiver.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
+fdi\receiver.o: ../Code/Inc/control.h
+fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\receiver.o: ../Code/Inc/navigation.h
+fdi\receiver.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h

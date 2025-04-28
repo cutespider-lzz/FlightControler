@@ -37,12 +37,15 @@ extern const double Kp_roll,Ki_roll,Kd_roll,Kp_pitch,Ki_pitch,Kd_pitch,Kp_yaw,Ki
 extern double expected_roll,expected_pitch,expected_yaw,expected_height;//各通道期望值
 extern double servo_roll,servo_pitch,servo_yaw;//对应通道角度
 extern double integtal_roll,integtal_pitch;//俯仰角误差积分
+extern const double	Kp_height;//高度控制率参数
 extern FMUControlModeEnum FMUControlMode;//飞控工作模式选择
+extern FMUControlModeEnum FMUControlModePrevious;
 
 
 
 void ServoSet(ServoChannel channel,double angle);
 void ControlInit(void);
+void ControlStop(void);
 void MYZControl(void);
 
 #endif

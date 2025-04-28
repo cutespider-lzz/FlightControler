@@ -10,8 +10,29 @@ const double Kp_roll=1,Ki_roll=0.2,Kd_roll=0.2,Kp_pitch=2,Ki_pitch=0.1,Kd_pitch 
 double expected_roll,expected_pitch,expected_yaw,expected_height;//各通道期望值
 double servo_roll,servo_pitch,servo_yaw;//对应通道角度
 double integtal_roll,integtal_pitch;//俯仰角误差积分
+const double	Kp_height=3;//高度控制率参数
 FMUControlModeEnum FMUControlMode = FMU_Manual;//飞控工作模式选择
-//FMUControlModeEnum FMUControlModePrevious = FMU_Manual;
+FMUControlModeEnum FMUControlModePrevious = FMU_Manual;
+
+
+
+void ControlInit(void)//飞控开始工作
+{
+	__HAL_TIM_SET_COUNTER(&htim3,0);
+	__HAL_TIM_ENABLE_IT(&htim3,TIM_IT_UPDATE);
+	ControlTime = 0;
+	HAL_TIM_Base_Start_IT(&htim3);
+}
+
+
+
+void ControlStop(void)//飞控结束工作
+{
+	HAL_TIM_Base_Stop_IT(&htim3);
+//	vTaskSuspend(SDWrite_TCB);
+//	FileClose();
+}
+
 
 void ServoSet(ServoChannel channel,double angle)//
 {
@@ -64,13 +85,7 @@ void ServoSet(ServoChannel channel,double angle)//
 	}
 }
 
-void ControlInit(void)
-{
-	__HAL_TIM_SET_COUNTER(&htim3,0);
-	__HAL_TIM_ENABLE_IT(&htim3,TIM_IT_UPDATE);
-	ControlTime = 0;
-	HAL_TIM_Base_Start_IT(&htim3);
-}
+
 
 void MYZControl(void)
 {
@@ -129,37 +144,37 @@ void MYZControl(void)
 			ServoSet(ServoChannel_7,servo_yaw);
 			break;
 		}
-//		case FMU_Height:
-//		{
-//			//滚转与俯仰角期望值
-//			expected_height = expected_height + ((ReceiverChannel[1]-ReceiverChannelNeutral[1]))*3.0/50000.0;
-//			expected_roll = (ReceiverChannel[0]-ReceiverChannelNeutral[0])*0.09;
-//			expected_pitch = Kp_height*(expected_height-IMUData.height)+fabs(IMUData.roll)*0.3;
-//			//限制俯仰角上下限
-//			expected_pitch = expected_pitch>30?30:expected_pitch;
-//			expected_pitch = expected_pitch<-30?-30:expected_pitch;
-//			//计算俯仰角误差积分
-//			integtal_pitch = integtal_pitch+(expected_pitch-pitch)*ControlDt;
-//      integtal_pitch = integtal_pitch>10?10:integtal_pitch;
-//      integtal_pitch = integtal_pitch<-10?-10:integtal_pitch;
-//			//计算舵机角度
-////			servo_roll = Kp_roll*(expected_roll-roll)-Kd_roll*IMUData.tran_gyr_y;
-//			servo_roll = Kp_roll*(expected_roll-roll)-Kd_roll*gy;
-//			servo_roll = servo_roll>30?30:servo_roll;
-//			servo_roll = servo_roll<-30?-30:servo_roll;
-////			servo_pitch = Kp_pitch*(expected_pitch-pitch)-Kd_pitch*IMUData.tran_gyr_x+Ki_pitch*integtal_pitch;
-//			servo_pitch = Kp_pitch*(expected_pitch-pitch)-Kd_pitch*gx+Ki_pitch*integtal_pitch;
-//			servo_pitch = servo_pitch>16?16:servo_pitch;
-//			servo_pitch = servo_pitch<-16?-16:servo_pitch;
-//			ServoSet(ServoChannel_1,servo_roll);
-//			ServoSet(ServoChannel_5,servo_roll);
-//			ServoSet(ServoChannel_2,servo_pitch);
-//			ServoSet(ServoChannel_6,servo_pitch);
-//			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,ReceiverChannel[2]);
-//			ServoSet(ServoChannel_4,expected_yaw);
-//			ServoSet(ServoChannel_7,expected_yaw);
-//			break;
-//		}
+		case FMU_Height:
+		{
+			//滚转与俯仰角期望值
+			expected_height = expected_height + ((ReceiverChannel[1]-ReceiverChannelNeutral[1]))*3.0/50000.0;
+			expected_roll = (ReceiverChannel[0]-ReceiverChannelNeutral[0])*0.09;
+			expected_pitch = Kp_height*(expected_height-Geodetic_Position_data.Height)+fabs(roll)*0.3;
+			//限制俯仰角上下限
+			expected_pitch = expected_pitch>30?30:expected_pitch;
+			expected_pitch = expected_pitch<-30?-30:expected_pitch;
+			//计算俯仰角误差积分
+			integtal_pitch = integtal_pitch+(expected_pitch-pitch)*ControlDt;
+      integtal_pitch = integtal_pitch>10?10:integtal_pitch;
+      integtal_pitch = integtal_pitch<-10?-10:integtal_pitch;
+			//计算舵机角度
+//			servo_roll = Kp_roll*(expected_roll-roll)-Kd_roll*IMUData.tran_gyr_y;
+			servo_roll = Kp_roll*(expected_roll-roll)-Kd_roll*gy;
+			servo_roll = servo_roll>30?30:servo_roll;
+			servo_roll = servo_roll<-30?-30:servo_roll;
+//			servo_pitch = Kp_pitch*(expected_pitch-pitch)-Kd_pitch*IMUData.tran_gyr_x+Ki_pitch*integtal_pitch;
+			servo_pitch = Kp_pitch*(expected_pitch-pitch)-Kd_pitch*gx+Ki_pitch*integtal_pitch;
+			servo_pitch = servo_pitch>16?16:servo_pitch;
+			servo_pitch = servo_pitch<-16?-16:servo_pitch;
+			ServoSet(ServoChannel_1,servo_roll);
+			ServoSet(ServoChannel_5,servo_roll);
+			ServoSet(ServoChannel_2,servo_pitch);
+			ServoSet(ServoChannel_6,servo_pitch);
+			__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,ReceiverChannel[2]);
+			ServoSet(ServoChannel_4,expected_yaw);
+			ServoSet(ServoChannel_7,expected_yaw);
+			break;
+		}
 	}
 }
 

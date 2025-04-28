@@ -1,6 +1,7 @@
 #include "receiver.h"
 #include "siyi.h"
 #include "string.h"
+#include "control.h"
 
 uint8_t ReceiverReceiveBuff[25];//Receiver接收缓存数组
 uint8_t ReceiverFifoBuff[25];//Receiver数据处理数组，缓存数组接收数据后保存至处理数组中
@@ -51,56 +52,56 @@ ReceiverStatus ReceiverDataConvert(uint8_t *ReceiverBuff)
 
 void ReceiverSolution(void)
 {
-//	if(ReceiverChannel[4]<1400)//检测飞控停止工作信号
-//	{
-//		if(ReceiverChannelPrevious[4]>1450)
-//		{
-//			ControlStop();
-//		}
-//		expected_roll = (ReceiverChannel[0]-1500)*0.09;
-//		expected_pitch = (ReceiverChannel[1]-1500)*0.09;
-//		expected_yaw = (ReceiverChannel[3]-1500)*0.09;
-//		//滚转角输出
-//		ServoSet(ServoChannel_1,expected_roll);
-//		ServoSet(ServoChannel_5,expected_roll);
-//		//俯仰角输出
-//		ServoSet(ServoChannel_2,expected_pitch);
-//		ServoSet(ServoChannel_6,expected_pitch);
-//		//油门输出
-//		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,ReceiverChannel[2]);
-//		//偏航角输出
-//		ServoSet(ServoChannel_4,expected_yaw);
-//		ServoSet(ServoChannel_7,expected_yaw);
-//	}
-//	else if(ReceiverChannel[4]>1600)//检测飞控开始工作信号
-//	{
-//		if(ReceiverChannelPrevious[4]<1550)
-//		{
-//			ControlStart();
-//		}
-//	}
-//	
-//	//控制飞控飞行模式
-//	if(ReceiverChannel[5]<1400)
-//	{
-//		//制导切换标志位
+	if(ReceiverChannel[4]<1400)//检测飞控停止工作信号
+	{
+		if(ReceiverChannelPrevious[4]>1450)
+		{
+			ControlStop();
+		}
+		expected_roll = (ReceiverChannel[0]-1500)*0.09;
+		expected_pitch = (ReceiverChannel[1]-1500)*0.09;
+		expected_yaw = (ReceiverChannel[3]-1500)*0.09;
+		//滚转角输出
+		ServoSet(ServoChannel_1,expected_roll);
+		ServoSet(ServoChannel_5,expected_roll);
+		//俯仰角输出
+		ServoSet(ServoChannel_2,expected_pitch);
+		ServoSet(ServoChannel_6,expected_pitch);
+		//油门输出
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_3,ReceiverChannel[2]);
+		//偏航角输出
+		ServoSet(ServoChannel_4,expected_yaw);
+		ServoSet(ServoChannel_7,expected_yaw);
+	}
+	else if(ReceiverChannel[4]>1600)//检测飞控开始工作信号
+	{
+		if(ReceiverChannelPrevious[4]<1550)
+		{
+			ControlInit();
+		}
+	}
+	
+	//控制飞控飞行模式
+	if(ReceiverChannel[5]<1400)
+	{
+		//制导切换标志位
 //		guideswitch = 0;
-//		if(ReceiverChannel[6]<1400) FMUControlMode = FMU_Manual;
-//		else if(ReceiverChannel[6]<1600) 
-//		{
-//			FMUControlMode = FMU_Stable;
-//			if(FMUControlModePrevious != FMU_Stable) integtal_pitch = 0;
-//		}
-//		else 
-//		{
-//			FMUControlMode = FMU_Height;
-//			if(FMUControlModePrevious != FMU_Height) 
-//			{
-//				expected_height = IMUData.height;
-//			}
-//		}
-//	}
-////	else if(ReceiverChannel[5]<1600)
+		if(ReceiverChannel[6]<1400) FMUControlMode = FMU_Manual;
+		else if(ReceiverChannel[6]<1600) 
+		{
+			FMUControlMode = FMU_Stable;
+			if(FMUControlModePrevious != FMU_Stable) integtal_pitch = 0;
+		}
+		else 
+		{
+			FMUControlMode = FMU_Height;
+			if(FMUControlModePrevious != FMU_Height) 
+			{
+				expected_height = Geodetic_Position_data.Height;
+			}
+		}
+	}
+//	else if(ReceiverChannel[5]<1600)
 //	else
 //	{
 //		FMUControlMode = FMU_Path;
@@ -111,14 +112,14 @@ void ReceiverSolution(void)
 //			guideswitch = 1;
 //		}
 //	}
-//	//进行遥控器归中校准
-//	if(ReceiverChannel[7]<1400) ;
-//	else if(ReceiverChannelPrevious[7]<1400)
-//	{
-//		memcpy(ReceiverChannelNeutral,ReceiverChannel,sizeof(ReceiverChannel));
-//	}
-//	
-//	//复制通道内容
-//	FMUControlModePrevious = FMUControlMode;
-//	memcpy(ReceiverChannelPrevious,ReceiverChannel,sizeof(ReceiverChannel));
+	//进行遥控器归中校准
+	if(ReceiverChannel[7]<1400) ;
+	else if(ReceiverChannelPrevious[7]<1400)
+	{
+		memcpy(ReceiverChannelNeutral,ReceiverChannel,sizeof(ReceiverChannel));
+	}
+	
+	//复制通道内容
+	FMUControlModePrevious = FMUControlMode;
+	memcpy(ReceiverChannelPrevious,ReceiverChannel,sizeof(ReceiverChannel));
 }

@@ -105,7 +105,6 @@ void ControlTask(void *pvParameters)
 	volatile uint32_t num;
 	uint8_t s[20];
 	ControlSemaphore = xSemaphoreCreateBinary();
-	ControlInit();//开启控制任务
 	while(1)
 	{
 		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
