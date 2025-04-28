@@ -6,7 +6,7 @@ const float ControlDt = 0.01f;
 SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
 BaseType_t ControlHigherTaskSwitch;
 
-const double Kp_roll=1,Ki_roll=0.2,Kd_roll=0.2,Kp_pitch=2,Ki_pitch=0.1,Kd_pitch = 1,Kp_yaw=1.5,Ki_yaw=0.1,Kd_yaw=0.1;//姿态控制参数
+double Kp_roll=1,Ki_roll=0,Kd_roll=0,Kp_pitch=1,Ki_pitch=1,Kd_pitch = 0,Kp_yaw=1.5,Ki_yaw=0,Kd_yaw=0;//姿态控制参数
 double expected_roll,expected_pitch,expected_yaw,expected_height;//各通道期望值
 double servo_roll,servo_pitch,servo_yaw;//对应通道角度
 double integtal_roll,integtal_pitch;//俯仰角误差积分

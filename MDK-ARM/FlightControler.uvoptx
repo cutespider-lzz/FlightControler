@@ -158,12 +158,12 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>IMUData</ItemText>
+          <ItemText>servo_roll</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>AHRSData</ItemText>
+          <ItemText>servo_pitch</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
@@ -173,72 +173,62 @@
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>NavRecBuff</ItemText>
+          <ItemText>ReceiverChannel[4],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>num</ItemText>
+          <ItemText>ReceiverChannelPrevious[4],0x0A</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>s</ItemText>
+          <ItemText>FMUControlMode</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>FMUControlMode</ItemText>
+          <ItemText>ReceiverChannelNeutral,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ReceiverChannel,0x0A</ItemText>
+          <ItemText>expected_roll</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ReceiverChannel[0],0x0A</ItemText>
+          <ItemText>expected_pitch</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>expected_roll</ItemText>
+          <ItemText>expected_yaw</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>ReceiverChannel[0]-ReceiverChannelNeutral[0],0x0A</ItemText>
+          <ItemText>Kp_pitch</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>servo_roll</ItemText>
+          <ItemText>Kp_roll</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>servo_pitch</ItemText>
+          <ItemText>Kd_roll</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>1</WinNumber>
-          <ItemText>test</ItemText>
+          <ItemText>roll</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>1</WinNumber>
-          <ItemText>FMUControlMode</ItemText>
-        </Ww>
-        <Ww>
-          <count>15</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>servo_pitch</ItemText>
-        </Ww>
-        <Ww>
-          <count>16</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ServoChannel_1</ItemText>
+          <ItemText>AHRSData.Roll</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
