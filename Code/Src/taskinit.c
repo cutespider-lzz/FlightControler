@@ -26,7 +26,7 @@ void TaskInit(void)
 		while(1) ;
 	}
 	//Create ControlTask
-	ControlTask_Ret = xTaskCreate((TaskFunction_t)ControlTask,"ControlTask",256,(void *)1,ControlTask_Prio,(TaskHandle_t *)(&ControlTask_TCB));
+	ControlTask_Ret = xTaskCreate((TaskFunction_t)ControlTask,"ControlTask",512,(void *)1,ControlTask_Prio,(TaskHandle_t *)(&ControlTask_TCB));
 	if(ControlTask_Ret == pdPASS) ;
 	else
 	{
@@ -102,16 +102,21 @@ TaskHandle_t ControlTask_TCB;
 
 void ControlTask(void *pvParameters)
 {
-	volatile uint32_t num;
-	uint8_t s[20];
 	ControlSemaphore = xSemaphoreCreateBinary();
+	HAL_TIM_Base_Start(&htim2);
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_4);
+	HAL_TIM_Base_Start(&htim4);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
 	while(1)
 	{
 		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
-//		MYZControl();
-		num = xTaskGetTickCount();
-		sprintf(s,"n:%u\r\n",num);
-		HAL_UART_Transmit(&huart1,s,sizeof(s),0xFFF);
+		MYZControl();
 	}
 }
 	
