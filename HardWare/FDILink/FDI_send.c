@@ -718,3 +718,4 @@ int fdiSendExternalData(int type, void* buffer, int length)
 //	//USART2_RX_STA = 0;
 //	return FDI_NO_ERROR;
 }
+

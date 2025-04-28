@@ -69,6 +69,7 @@ void ControlInit(void)
 	__HAL_TIM_SET_COUNTER(&htim3,0);
 	__HAL_TIM_ENABLE_IT(&htim3,TIM_IT_UPDATE);
 	ControlTime = 0;
+	HAL_TIM_Base_Start_IT(&htim3);
 }
 
 void MYZControl(void)

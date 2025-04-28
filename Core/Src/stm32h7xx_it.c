@@ -338,6 +338,8 @@ void USART6_IRQHandler(void)
 		NavRecLength = 400 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
 		memcpy(NavRecFifoBuff,NavRecBuff,NavRecLength);
 		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
+		xSemaphoreGiveFromISR(NavSemaphore,&NavHigherTaskSwitch);
+//		portYIELD_FROM_ISR(NavHigherTaskSwitch);
 	}
   /* USER CODE END USART6_IRQn 1 */
 }

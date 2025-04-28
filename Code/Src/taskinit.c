@@ -1,5 +1,6 @@
 #include "taskinit.h"
 #include "cmsis_os.h"
+#include "stdio.h"
 
 void TaskInit(void)
 {
@@ -18,14 +19,14 @@ void TaskInit(void)
 		while(1) ;
 	}
 	//Create NavigationTask
-	NavigationTask_Ret = xTaskCreate((TaskFunction_t)NavigationTask,"NavigationTask",256,(void *)1,NavigationTask_Prio,(TaskHandle_t *)(&NavigationTask_TCB));
+	NavigationTask_Ret = xTaskCreate((TaskFunction_t)NavigationTask,"NavigationTask",512,(void *)1,NavigationTask_Prio,(TaskHandle_t *)(&NavigationTask_TCB));
 	if(NavigationTask_Ret == pdPASS) ;
 	else
 	{
 		while(1) ;
 	}
 	//Create ControlTask
-	ControlTask_Ret = xTaskCreate((TaskFunction_t)ControlTask,"ControlTask",32,(void *)1,ControlTask_Prio,(TaskHandle_t *)(&ControlTask_TCB));
+	ControlTask_Ret = xTaskCreate((TaskFunction_t)ControlTask,"ControlTask",256,(void *)1,ControlTask_Prio,(TaskHandle_t *)(&ControlTask_TCB));
 	if(ControlTask_Ret == pdPASS) ;
 	else
 	{
@@ -84,8 +85,9 @@ TaskHandle_t NavigationTask_TCB;
 void NavigationTask(void *pvParameters)
 {
 //	NavQueue = xQueueCreate(400,sizeof(uint8_t));
+	NavSemaphore = xSemaphoreCreateBinary();
+	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
-  HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
 	while(1)
 	{
 		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
@@ -95,16 +97,22 @@ void NavigationTask(void *pvParameters)
 
 //ControlTask函数声明
 BaseType_t ControlTask_Ret;
-UBaseType_t ControlTask_Prio;
+UBaseType_t ControlTask_Prio=20;
 TaskHandle_t ControlTask_TCB;
 
 void ControlTask(void *pvParameters)
 {
-	ControlInit();
+	volatile uint32_t num;
+	uint8_t s[20];
+	ControlSemaphore = xSemaphoreCreateBinary();
+	ControlInit();//开启控制任务
 	while(1)
 	{
 		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);
-		MYZControl();
+//		MYZControl();
+		num = xTaskGetTickCount();
+		sprintf(s,"n:%u\r\n",num);
+		HAL_UART_Transmit(&huart1,s,sizeof(s),0xFFF);
 	}
 }
 	
@@ -117,6 +125,7 @@ TaskHandle_t TFStorageTask_TCB;
 void TFStorageTask(void *pvParameters)
 {
 	TFInit();
+	vTaskSuspend(NULL);
 	while(1)
 	{
 		xTaskGetTickCount();
