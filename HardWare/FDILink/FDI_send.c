@@ -719,3 +719,4 @@ int fdiSendExternalData(int type, void* buffer, int length)
 //	return FDI_NO_ERROR;
 }
 
+

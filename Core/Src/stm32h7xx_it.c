@@ -331,16 +331,17 @@ void USART6_IRQHandler(void)
   /* USER CODE END USART6_IRQn 0 */
   HAL_UART_IRQHandler(&huart6);
   /* USER CODE BEGIN USART6_IRQn 1 */
-	if(__HAL_UART_GET_FLAG(&huart6,UART_FLAG_IDLE)==SET)
-  {
-    __HAL_UART_CLEAR_IDLEFLAG(&huart6);
-		HAL_UART_AbortReceive(&huart6);
-		NavRecLength = 400 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
-		memcpy(NavRecFifoBuff,NavRecBuff,NavRecLength);
-		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
-		xSemaphoreGiveFromISR(NavSemaphore,&NavHigherTaskSwitch);
+//	if(__HAL_UART_GET_FLAG(&huart6,UART_FLAG_IDLE)==SET)
+//  {
+//    __HAL_UART_CLEAR_IDLEFLAG(&huart6);
+//		HAL_UART_AbortReceive(&huart6);
+//		NavRecLength = 400 - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
+//		memcpy(NavRecFifoBuff,NavRecBuff,NavRecLength);
+//		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
+//		NavigationSolution();
+//		xSemaphoreGiveFromISR(NavSemaphore,&NavHigherTaskSwitch);
 //		portYIELD_FROM_ISR(NavHigherTaskSwitch);
-	}
+//	}
   /* USER CODE END USART6_IRQn 1 */
 }
 

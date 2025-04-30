@@ -8,8 +8,8 @@
 #include "FDI_config.h"
 #include "cmsis_os.h"
 
-extern uint8_t NavRecBuff[400];
-extern uint8_t NavRecFifoBuff[400];
+extern uint8_t NavRecBuff[];
+extern uint8_t NavRecFifoBuff[];
 extern uint16_t NavRecLength;
 
 extern FDILink_VersionData_Packet_t VersionData;

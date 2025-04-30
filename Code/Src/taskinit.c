@@ -86,8 +86,8 @@ void NavigationTask(void *pvParameters)
 {
 //	NavQueue = xQueueCreate(400,sizeof(uint8_t));
 	NavSemaphore = xSemaphoreCreateBinary();
-	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
-	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
+	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 425);
+//	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
 	while(1)
 	{
 		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
