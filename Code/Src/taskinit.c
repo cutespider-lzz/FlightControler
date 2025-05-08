@@ -86,13 +86,31 @@ void NavigationTask(void *pvParameters)
 {
 //	NavQueue = xQueueCreate(400,sizeof(uint8_t));
 	NavSemaphore = xSemaphoreCreateBinary();
-	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 425);
+	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 100);
 //	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
 	while(1)
 	{
 		xSemaphoreTake(NavSemaphore,portMAX_DELAY);
 		NavigationSolution();
 	}
+	
+//	while(1)
+//	{
+//		vTaskDelay(1);
+//		HAL_UART_AbortReceive(&huart6);
+//		if(NavRecBuff[0]==0xFC)
+//		{
+//			memcpy(NavRecFifoBuff,NavRecBuff,306);
+//			memset(NavRecBuff,0,306);
+//			HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
+//			NavigationSolution();
+//		}
+//		else
+//		{
+//			vTaskDelay(1);
+//			HAL_UART_Receive_DMA(&huart6, NavRecBuff, 400);
+//		}
+//	}
 }
 
 //ControlTask函数声明
