@@ -63,7 +63,7 @@ extern DMA_HandleTypeDef hdma_usart2_rx;
 extern DMA_HandleTypeDef hdma_usart6_rx;
 
 /* USER CODE END EC */
-
+extern uint8_t system_cnt;
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 

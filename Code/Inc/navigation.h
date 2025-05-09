@@ -8,9 +8,12 @@
 #include "FDI_config.h"
 #include "cmsis_os.h"
 
+#define NavDMARecLength 500
+
 extern uint8_t NavRecBuff[];
 extern uint8_t NavRecFifoBuff[];
 extern uint16_t NavRecLength;
+extern uint16_t NavFifoLength;
 
 extern FDILink_VersionData_Packet_t VersionData;
 extern FDILink_IMUData_Packet_t IMUData;

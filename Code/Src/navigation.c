@@ -1,8 +1,9 @@
 #include "navigation.h"
 
-uint8_t NavRecBuff[800];
-uint8_t NavRecFifoBuff[800];
+uint8_t NavRecBuff[500];
+uint8_t NavRecFifoBuff[500];
 uint16_t NavRecLength;
+uint16_t NavFifoLength;
 
 FDILink_VersionData_Packet_t VersionData;
 FDILink_IMUData_Packet_t IMUData;
@@ -48,18 +49,7 @@ BaseType_t NavHigherTaskSwitch;
 
 void NavigationSolution(void)
 {
-	fdiComProtocolReceive(&_FDILink, NavRecFifoBuff, 100);
+	fdiComProtocolReceive(&_FDILink, NavRecFifoBuff, NavRecLength);
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-  if(huart->Instance == USART6)
-	{
-		memcpy(NavRecFifoBuff,NavRecBuff,100);
-		HAL_UART_Receive_DMA(&huart6, NavRecBuff, 100);
-//		memset(NavRecBuff,0,400);
-		xSemaphoreGiveFromISR(NavSemaphore,&NavHigherTaskSwitch);
-		portYIELD_FROM_ISR(NavHigherTaskSwitch);
-	}
-}
 

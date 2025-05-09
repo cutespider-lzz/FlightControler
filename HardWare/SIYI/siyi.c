@@ -5,7 +5,5 @@
 #define SIYIChannelMin 256
 #define SIYIChannelMax 1729
 
-
-
 #endif
 

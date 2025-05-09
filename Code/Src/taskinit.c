@@ -86,7 +86,7 @@ void NavigationTask(void *pvParameters)
 {
 //	NavQueue = xQueueCreate(400,sizeof(uint8_t));
 	NavSemaphore = xSemaphoreCreateBinary();
-	HAL_UART_Receive_DMA(&huart6, NavRecBuff, 100);
+	HAL_UART_Receive_DMA(&huart6, NavRecBuff, NavDMARecLength);
 //	__HAL_UART_ENABLE_IT(&huart6, UART_IT_IDLE);
 	while(1)
 	{
@@ -131,6 +131,7 @@ void ControlTask(void *pvParameters)
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_3);
 	HAL_TIM_PWM_Start(&htim4,TIM_CHANNEL_4);
+	ControlInit();
 	while(1)
 	{
 		xSemaphoreTake(ControlSemaphore,portMAX_DELAY);

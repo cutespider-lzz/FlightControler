@@ -62,7 +62,7 @@ DMA_HandleTypeDef hdma_usart6_rx;
 
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
-
+uint8_t system_cnt = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -174,7 +174,7 @@ int main(void)
   {
 //		HAL_GPIO_TogglePin(SIGNAL_GPIO_Port,SIGNAL_Pin);
 		HAL_GPIO_TogglePin(LED_GPIO_Port,LED_Pin);
-		HAL_Delay(100);
+		HAL_Delay(1);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -359,7 +359,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 199;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 65535;
+  htim3.Init.Period = 1999;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -403,7 +403,7 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 399;
+  htim4.Init.Prescaler = 199;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim4.Init.Period = 9999;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -873,8 +873,27 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 1 */
 	if (htim->Instance == TIM3)
   {
-    xSemaphoreGiveFromISR(ControlSemaphore,&ControlHigherTaskSwitch);
-		portYIELD_FROM_ISR(ControlHigherTaskSwitch);
+		if(system_cnt>4)
+		{
+			system_cnt = 0;
+			xSemaphoreGiveFromISR(ControlSemaphore,&ControlHigherTaskSwitch);
+			portYIELD_FROM_ISR(ControlHigherTaskSwitch);
+		}
+		NavRecLength = NavDMARecLength - __HAL_DMA_GET_COUNTER(&hdma_usart6_rx);
+		if((NavRecLength == NavFifoLength)&&NavRecLength!=0)
+		{
+			HAL_UART_AbortReceive(&huart6);
+			memcpy(NavRecFifoBuff,NavRecBuff,NavRecLength);
+			HAL_UART_Receive_DMA(&huart6, NavRecBuff, NavDMARecLength);
+			NavFifoLength = 0;
+			xSemaphoreGiveFromISR(NavSemaphore,&NavHigherTaskSwitch);
+			portYIELD_FROM_ISR(NavHigherTaskSwitch);
+		}
+		else
+		{
+			NavFifoLength = NavRecLength;
+		}
+		system_cnt++;
   }
   /* USER CODE END Callback 1 */
 }
