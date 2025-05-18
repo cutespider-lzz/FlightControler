@@ -80,3 +80,5 @@ fdi\main.o: D:\Keilv5\ARM\ARMCC\Bin\..\include\string.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
 fdi\main.o: ../Code/Inc/control.h
 fdi\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+fdi\main.o: ../Code/Inc/telemetry.h
+fdi\main.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
