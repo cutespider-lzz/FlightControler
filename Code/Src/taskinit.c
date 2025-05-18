@@ -39,6 +39,13 @@ void TaskInit(void)
 	{
 		while(1) ;
 	}
+	//Create TelemetrySendTask
+	TelemetrySendTask_Ret = xTaskCreate((TaskFunction_t)TelemetrySendTask,"TelemetrySendTask",256,(void *)1,TelemetrySendTask_Prio,(TaskHandle_t *)(&TelemetrySendTask_TCB));
+	if(TelemetrySendTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
 	vTaskStartScheduler();
 }
 
@@ -154,3 +161,17 @@ void TFStorageTask(void *pvParameters)
 		xTaskGetTickCount();
 	}
 }
+
+//TelemetrySendTask函数声明
+BaseType_t TelemetrySendTask_Ret;
+UBaseType_t TelemetrySendTask_Prio=5;
+TaskHandle_t TelemetrySendTask_TCB;
+
+void TelemetrySendTask(void *pvParameters)
+{
+	while(1)
+	{
+		xTaskGetTickCount();
+	}
+}
+

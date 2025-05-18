@@ -8,6 +8,7 @@
 #include "receiver.h"
 #include "navigation.h"
 #include "control.h"
+#include "telemetry.h"
 
 //任务初始化
 void TaskInit(void);
@@ -46,5 +47,12 @@ extern UBaseType_t TFStorageTask_Prio;
 extern TaskHandle_t TFStorageTask_TCB;
 
 void TFStorageTask(void *pvParameters);
+
+//TelemetrySendTask函数声明
+extern BaseType_t TelemetrySendTask_Ret;
+extern UBaseType_t TelemetrySendTask_Prio;
+extern TaskHandle_t TelemetrySendTask_TCB;
+
+void TelemetrySendTask(void *pvParameters);
 
 #endif
