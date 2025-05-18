@@ -96,6 +96,7 @@ void ServoSet(ServoChannel channel,double angle)//
 
 void MYZControl(void)
 {
+<<<<<<< Updated upstream
 	pitch = AHRSData.Pitch*57.3;
 	roll = AHRSData.Roll*57.3-1.45;
 	yaw = AHRSData.Heading*57.3;
@@ -108,6 +109,14 @@ void MYZControl(void)
 //	volatile double gx = AHRSData.PitchSpeed;
 //	volatile double gy = AHRSData.RollSpeed;
 //	volatile double gz = AHRSData.HeadingSpeed;
+=======
+	volatile double pitch = AHRSData.Pitch*57.3;
+	volatile double roll = AHRSData.Roll*57.3;
+	volatile double yaw = AHRSData.Heading*57.3;
+	double gx = AHRSData.PitchSpeed;
+	double gy = AHRSData.RollSpeed;
+	double gz = AHRSData.HeadingSpeed;
+>>>>>>> Stashed changes
 	switch(FMUControlMode)
 	{
 		case FMU_Manual:
