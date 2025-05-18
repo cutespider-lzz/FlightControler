@@ -52,9 +52,9 @@ ReceiverStatus ReceiverDataConvert(uint8_t *ReceiverBuff)
 
 void ReceiverSolution(void)
 {
-	if(ReceiverChannel[4]<1400)//检测飞控停止工作信号
+	if(ReceiverChannel[5]<1400)//检测飞控停止工作信号
 	{
-		if(ReceiverChannelPrevious[4]>1450)
+		if(ReceiverChannelPrevious[5]>1450)
 		{
 			ControlStop();
 		}
@@ -73,16 +73,16 @@ void ReceiverSolution(void)
 		ServoSet(ServoChannel_4,expected_yaw);
 		ServoSet(ServoChannel_7,expected_yaw);
 	}
-	else if(ReceiverChannel[4]>1600)//检测飞控开始工作信号
+	else if(ReceiverChannel[5]>1600)//检测飞控开始工作信号
 	{
-		if(ReceiverChannelPrevious[4]<1550)
+		if(ReceiverChannelPrevious[5]<1550)
 		{
 			ControlInit();
 		}
 	}
 	
 	//控制飞控飞行模式
-	if(ReceiverChannel[5]<1400)
+	if(ReceiverChannel[6]>1)
 	{
 		//制导切换标志位
 //		guideswitch = 0;
@@ -113,11 +113,11 @@ void ReceiverSolution(void)
 //		}
 //	}
 	//进行遥控器归中校准
-	if(ReceiverChannel[7]<1400) ;
-	else if(ReceiverChannelPrevious[7]<1400)
-	{
-		memcpy(ReceiverChannelNeutral,ReceiverChannel,sizeof(ReceiverChannel));
-	}
+//	if(ReceiverChannel[7]<1400) ;
+//	else if(ReceiverChannelPrevious[7]<1400)
+//	{
+//		memcpy(ReceiverChannelNeutral,ReceiverChannel,sizeof(ReceiverChannel));
+//	}
 	
 	//复制通道内容
 	FMUControlModePrevious = FMUControlMode;
