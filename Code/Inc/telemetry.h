@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "stdio.h"
+#include "navigation.h"
 
 extern uint8_t TelemetrySendBuff[];
 

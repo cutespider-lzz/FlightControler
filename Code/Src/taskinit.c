@@ -171,7 +171,8 @@ void TelemetrySendTask(void *pvParameters)
 {
 	while(1)
 	{
-		xTaskGetTickCount();
+		TelemetrySend();
+		vTaskDelay(20);
 	}
 }
 
