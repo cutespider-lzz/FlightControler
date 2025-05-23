@@ -46,6 +46,15 @@ void TaskInit(void)
 	{
 		while(1) ;
 	}
+	
+	//Create ExtfSendTask
+	ExtfSendTask_Ret = xTaskCreate((TaskFunction_t)ExtfSendTask,"ExtfSendTask",256,(void *)1,ExtfSendTask_Prio,(TaskHandle_t *)(&ExtfSendTask_TCB));
+	if(ExtfSendTask_Ret == pdPASS) ;
+	else
+	{
+		while(1) ;
+	}
+	
 	vTaskStartScheduler();
 }
 
@@ -175,4 +184,20 @@ void TelemetrySendTask(void *pvParameters)
 		vTaskDelay(20);
 	}
 }
+
+
+//ExtfSendTask函数声明
+BaseType_t ExtfSendTask_Ret;
+UBaseType_t ExtfSendTask_Prio=5;
+TaskHandle_t ExtfSendTask_TCB;
+
+void ExtfSendTask(void *pvParameters)
+{
+	while(1)
+	{
+		ExtfSend();
+		vTaskDelay(20);
+	}
+}
+
 

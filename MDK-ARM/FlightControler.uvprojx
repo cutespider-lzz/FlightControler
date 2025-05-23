@@ -10,7 +10,7 @@
       <TargetName>FlightControler</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
+      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -2472,6 +2472,16 @@
               <FileName>receiver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Code\Src\receiver.c</FilePath>
+            </File>
+            <File>
+              <FileName>extf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Code\Src\extf.c</FilePath>
+            </File>
+            <File>
+              <FileName>extf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Code\Inc\extf.h</FilePath>
             </File>
           </Files>
         </Group>

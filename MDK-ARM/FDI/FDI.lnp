@@ -58,6 +58,7 @@
 "fdi\telemetry.o"
 "fdi\tf.o"
 "fdi\receiver.o"
+"fdi\extf.o"
 "fdi\crc_table.o"
 "fdi\fdi_send.o"
 "fdi\fdilink.o"

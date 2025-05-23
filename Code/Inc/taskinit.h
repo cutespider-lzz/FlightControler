@@ -9,6 +9,7 @@
 #include "navigation.h"
 #include "control.h"
 #include "telemetry.h"
+#include "extf.h"
 
 //任务初始化
 void TaskInit(void);
@@ -54,5 +55,12 @@ extern UBaseType_t TelemetrySendTask_Prio;
 extern TaskHandle_t TelemetrySendTask_TCB;
 
 void TelemetrySendTask(void *pvParameters);
+
+//ExtfSendTask函数声明
+extern BaseType_t ExtfSendTask_Ret;
+extern UBaseType_t ExtfSendTask_Prio;
+extern TaskHandle_t ExtfSendTask_TCB;
+
+void ExtfSendTask(void *pvParameters);
 
 #endif
