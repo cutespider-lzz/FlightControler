@@ -6,8 +6,8 @@ const float ControlDt = 0.01f;
 SemaphoreHandle_t ControlSemaphore;//控制模块二值信号量
 BaseType_t ControlHigherTaskSwitch;
 
-//double Kp_roll=1,Kd_roll=0.2,Kp_pitch=2,Kd_pitch=0.1,Ki_pitch = 1,Kp_yaw=1.5,Kd_yaw=0.1;//姿态控制参数
-double Kp_roll=1,Kd_roll=0,Kp_pitch=2,Kd_pitch=0,Ki_pitch = 0,Kp_yaw=1.5,Kd_yaw=0;//姿态控制参数
+double Kp_roll=1,Kd_roll=0.2,Kp_pitch=2,Kd_pitch=0.1,Ki_pitch = 1,Kp_yaw=1.5,Kd_yaw=0.1;//姿态控制参数
+//double Kp_roll=1,Kd_roll=0,Kp_pitch=2,Kd_pitch=0,Ki_pitch = 0,Kp_yaw=1.5,Kd_yaw=0;//姿态控制参数
 
 double expected_roll,expected_pitch,expected_yaw,expected_height;//各通道期望值
 double servo_roll,servo_pitch,servo_yaw;//对应通道角度
@@ -45,7 +45,7 @@ void ServoSet(ServoChannel channel,double angle)//
 {
 	//漫游者舵机参数
 	uint8_t ServoDirection[8] = {1,0,0,0,1,0,0,0};
-	int16_t ServoOffset[8] = {0,0,0,-60,0,120,0,0};
+	int16_t ServoOffset[8] = {0,100,0,-150,0,120,0,0};
 	int16_t angle_int16;
 	switch(channel)
 	{
@@ -96,7 +96,7 @@ void ServoSet(ServoChannel channel,double angle)//
 
 void MYZControl(void)
 {
-	pitch = AHRSData.Pitch*57.3;
+	pitch = AHRSData.Pitch*57.3-3;
 	roll = AHRSData.Roll*57.3-1.45;
 	yaw = AHRSData.Heading*57.3;
 	gy = AHRSData.PitchSpeed;
@@ -109,12 +109,12 @@ void MYZControl(void)
 //	volatile double gy = AHRSData.RollSpeed;
 //	volatile double gz = AHRSData.HeadingSpeed;
 
-	volatile double pitch = AHRSData.Pitch*57.3;
-	volatile double roll = AHRSData.Roll*57.3;
-	volatile double yaw = AHRSData.Heading*57.3;
-	double gx = AHRSData.PitchSpeed;
-	double gy = AHRSData.RollSpeed;
-	double gz = AHRSData.HeadingSpeed;
+//	volatile double pitch = AHRSData.Pitch*57.3-5;
+//	volatile double roll = AHRSData.Roll*57.3-1.45;
+//	volatile double yaw = AHRSData.Heading*57.3;
+//	double gx = AHRSData.PitchSpeed;
+//	double gy = AHRSData.RollSpeed;
+//	double gz = AHRSData.HeadingSpeed;
 
 	switch(FMUControlMode)
 	{
@@ -140,8 +140,8 @@ void MYZControl(void)
 		{
 			//滚转与俯仰角期望值 0.09为45°
 			expected_roll = (ReceiverChannel[0]-ReceiverChannelNeutral[0])*0.09;
-			expected_pitch = -(ReceiverChannel[1]-ReceiverChannelNeutral[1])*0.06;//输入期望俯仰角
-			expected_yaw = (ReceiverChannel[3]-ReceiverChannelNeutral[3])*0.015;
+			expected_pitch = -(ReceiverChannel[1]-ReceiverChannelNeutral[1])*0.09;//输入期望俯仰角
+			expected_yaw = (ReceiverChannel[3]-ReceiverChannelNeutral[3])*0.06;
 			//计算俯仰角误差积分
 			integtal_pitch = integtal_pitch+(expected_pitch-pitch)*ControlDt;
       integtal_pitch = integtal_pitch>10?10:integtal_pitch;
@@ -171,8 +171,8 @@ void MYZControl(void)
 			//滚转与俯仰角期望值
 			expected_height = expected_height - ((ReceiverChannel[1]-ReceiverChannelNeutral[1]))*3.0/50000.0;
 			expected_roll = (ReceiverChannel[0]-ReceiverChannelNeutral[0])*0.09;
-			expected_pitch = Kp_height*(expected_height-Geodetic_Position_data.Height)+fabs(roll)*0.3;
-			expected_yaw = (ReceiverChannel[3]-ReceiverChannelNeutral[3])*0.015;
+			expected_pitch = Kp_height*(expected_height-Geodetic_Position_data.Height)+fabs(roll)*0.09;
+			expected_yaw = (ReceiverChannel[3]-ReceiverChannelNeutral[3])*0.06;
 			//限制俯仰角上下限
 			expected_pitch = expected_pitch>30?30:expected_pitch;
 			expected_pitch = expected_pitch<-30?-30:expected_pitch;

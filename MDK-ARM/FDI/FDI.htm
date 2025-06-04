@@ -3,7 +3,7 @@
 <title>Static Call Graph - [FDI\FDI.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image FDI\FDI.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri May 23 22:28:17 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Jun 04 20:38:47 2025
 <BR><P>
 <H3>Maximum Stack Usage =        832 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -811,9 +811,9 @@ Global Symbols
 <P><STRONG><a name="[169]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART5_IRQHandler
 <LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverSolution
 <LI><a href="#[21f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataToQueue
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvCopyDataFromQueue
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverSolution
 <LI><a href="#[1f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fdiDecodeBuffer
 </UL>
 
@@ -1138,14 +1138,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a5]"></a>ControlTask</STRONG> (Thumb, 112 bytes, Stack size 0 bytes, taskinit.o(i.ControlTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = ControlTask &rArr; MYZControl &rArr; ServoSet
+<BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = ControlTask &rArr; MYZControl &rArr; ServoSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
 <LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MYZControl
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ControlInit
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MYZControl
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ControlInit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> taskinit.o(i.TaskInit)
 </UL>
@@ -1202,8 +1202,8 @@ Global Symbols
 <P><STRONG><a name="[99]"></a>ExitRun0Mode</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, system_stm32h7xx.o(i.ExitRun0Mode))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32h743xx.o(.text)
 </UL>
-<P><STRONG><a name="[102]"></a>ExtfSend</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, extf.o(i.ExtfSend))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<P><STRONG><a name="[102]"></a>ExtfSend</STRONG> (Thumb, 192 bytes, Stack size 120 bytes, extf.o(i.ExtfSend))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
 <LI>Call Chain = ExtfSend &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
@@ -1213,13 +1213,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a8]"></a>ExtfSendTask</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, taskinit.o(i.ExtfSendTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
  + In Cycle
 <LI>Call Chain = ExtfSendTask &rArr;  ExtfSendTask (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ExtfSend
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ExtfSend
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ExtfSendTask
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ExtfSendTask
 </UL>
@@ -2038,8 +2038,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[100]"></a>MYZControl</STRONG> (Thumb, 824 bytes, Stack size 184 bytes, control.o(i.MYZControl))
-<BR><BR>[Stack]<UL><LI>Max Depth = 204<LI>Call Chain = MYZControl &rArr; ServoSet
+<P><STRONG><a name="[100]"></a>MYZControl</STRONG> (Thumb, 820 bytes, Stack size 112 bytes, control.o(i.MYZControl))
+<BR><BR>[Stack]<UL><LI>Max Depth = 132<LI>Call Chain = MYZControl &rArr; ServoSet
 </UL>
 <BR>[Calls]<UL><LI><a href="#[18e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ServoSet
 </UL>
@@ -2072,9 +2072,9 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 288<LI>Call Chain = NavigationTask &rArr; NavigationSolution &rArr; fdiComProtocolReceive &rArr; fdiEffectFeature &rArr; fdiDecodeBuffer
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_DMA
-<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NavigationSolution
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NavigationSolution
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> taskinit.o(i.TaskInit)
 </UL>
@@ -2101,10 +2101,10 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = ReceiverTask &rArr; xQueueSemaphoreTake &rArr; xTaskResumeAll &rArr; xTaskIncrementTick
 </UL>
 <BR>[Calls]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_DMA
-<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverSolution
-<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverDataConvert
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueSemaphoreTake
 <LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverSolution
+<LI><a href="#[191]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverDataConvert
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> taskinit.o(i.TaskInit)
 </UL>
@@ -2492,9 +2492,9 @@ Global Symbols
 <P><STRONG><a name="[a6]"></a>TFStorageTask</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, taskinit.o(i.TFStorageTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 832<LI>Call Chain = TFStorageTask &rArr; TFInit &rArr; f_open &rArr; dir_register &rArr; dir_find &rArr; dir_next &rArr; create_chain &rArr; put_fat &rArr; move_window &rArr; sync_window &rArr; disk_write
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFInit
-<LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
+<BR>[Calls]<UL><LI><a href="#[1b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskGetTickCount
 <LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[1ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFInit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> taskinit.o(i.TaskInit)
 </UL>
@@ -2545,8 +2545,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[1b9]"></a>TelemetrySend</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, telemetry.o(i.TelemetrySend))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<P><STRONG><a name="[1b9]"></a>TelemetrySend</STRONG> (Thumb, 154 bytes, Stack size 96 bytes, telemetry.o(i.TelemetrySend))
+<BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
 <LI>Call Chain = TelemetrySend &rArr; __2sprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Transmit_DMA
@@ -2556,13 +2556,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a7]"></a>TelemetrySendTask</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, taskinit.o(i.TelemetrySendTask))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
  + In Cycle
 <LI>Call Chain = TelemetrySendTask &rArr;  TelemetrySendTask (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TelemetrySend
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
+<LI><a href="#[1b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TelemetrySend
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TelemetrySendTask
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TelemetrySendTask
 </UL>
@@ -3248,8 +3248,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[ca]"></a>vTaskSwitchContext</STRONG> (Thumb, 86 bytes, Stack size 0 bytes, tasks.o(i.vTaskSwitchContext))
-<BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
-<LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<BR><BR>[Called By]<UL><LI><a href="#[1b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSuspend
+<LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PendSV_Handler
 </UL>
 
 <P><STRONG><a name="[236]"></a>xPortStartScheduler</STRONG> (Thumb, 232 bytes, Stack size 16 bytes, port.o(i.xPortStartScheduler))
@@ -3268,11 +3268,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[22d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pvPortMalloc
 <LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewQueue
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverTask
+<BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
+<LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverTask
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NavigationTask
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ControlTask
-<LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osMessageCreate
-<LI><a href="#[1fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreCreate
 </UL>
 
 <P><STRONG><a name="[20c]"></a>xQueueGenericCreateStatic</STRONG> (Thumb, 112 bytes, Stack size 16 bytes, queue.o(i.xQueueGenericCreateStatic))
@@ -3386,10 +3386,10 @@ Global Symbols
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvIsQueueEmpty
 <LI><a href="#[23e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvGetDisinheritPriorityAfterTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverTask
+<BR>[Called By]<UL><LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreWait
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReceiverTask
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NavigationTask
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ControlTask
-<LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSemaphoreWait
 </UL>
 
 <P><STRONG><a name="[23c]"></a>xTaskCheckForTimeOut</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, tasks.o(i.xTaskCheckForTimeOut))
@@ -3436,8 +3436,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1b5]"></a>xTaskGetTickCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetTickCount))
-<BR><BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFStorageTask
-<LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
+<BR><BR>[Called By]<UL><LI><a href="#[1a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osKernelSysTick
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TFStorageTask
 </UL>
 
 <P><STRONG><a name="[20b]"></a>xTaskGetTickCountFromISR</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, tasks.o(i.xTaskGetTickCountFromISR))
@@ -3455,8 +3455,8 @@ Global Symbols
 <LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uxListRemove
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvResetNextTaskUnblockTime
 </UL>
-<BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-<LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<BR>[Called By]<UL><LI><a href="#[22f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xTaskResumeAll
+<LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
 <P><STRONG><a name="[220]"></a>xTaskPriorityDisinherit</STRONG> (Thumb, 146 bytes, Stack size 16 bytes, tasks.o(i.xTaskPriorityDisinherit))
