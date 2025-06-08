@@ -22,12 +22,41 @@ Dialog DLL:      TCM.DLL V1.42.0.0
  
 <h2>Project:</h2>
 C:\Users\user\Documents\GitHub\FlightControler-FixedWing\MDK-ARM\FlightControler.uvprojx
-Project File Date:  06/03/2025
+Project File Date:  06/08/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\Keilv5\ARM\ARMCC\Bin'
 Build target 'FlightControler'
-"FDI\FDI.axf" - 0 Error(s), 0 Warning(s).
+compiling extf.c...
+..\Code\Src\extf.c(11): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *__restrict__"
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(11): warning:  #181-D: argument is incompatible with corresponding format string conversion
+    sprintf(ExtfSendBuff,"%0.f,%0.f,%0.f,%0.f,%0.f,%0.f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f,%0.2f%0.5f,%0.5f,%0.2f,%0.2f,%0.2f,%0.2f,%0.f,\r\n",FTimeData.Year,FTimeData.Month,FTimeData.Month_Day,FTimeData.Hour,FTimeData.Minute,FTimeData.Second,AHRSData.RollSpeed,AHRSData.PitchSpeed,AHRSData.HeadingSpeed,AHRSData.Roll,AHRSData.Pitch,AHRSData.Heading,Geodetic_Position_data.Longitude,Geodetic_Position_data.Latitude,Geodetic_Position_data.Height,INSGPSData.Location_Down,INSGPSData.Location_East,INSGPSData.Location_North,INSGPSData.Velocity_Down,INSGPSData.Velocity_East,INSGPSData.Velocity_North,Raw_Sensors_data.Pressure,Raw_Sensors_data.Pressure_Temperature,Raw_GNSS_data.Longitude,Raw_GNSS_data.Latitude,Raw_GNSS_data.Height,Raw_GNSS_data.Velocity_down,Raw_GNSS_data.Velocity_east,Raw_GNSS_data.Velocity_north,Satellites_data.GNSS_satellites);
+..\Code\Src\extf.c(14): warning:  #1-D: last line of file ends without a newline
+  }
+..\Code\Src\extf.c: 9 warnings, 0 errors
+compiling telemetry.c...
+..\Code\Src\telemetry.c(9): warning:  #167-D: argument of type "uint8_t *" is incompatible with parameter of type "char *__restrict__"
+  	sprintf(TelemetrySendBuff,"Height:%0.2f,Satellites:%.0f\r\n",Geodetic_Position_data.Height,Satellites_data.GNSS_satellites);
+..\Code\Src\telemetry.c(9): warning:  #181-D: argument is incompatible with corresponding format string conversion
+  	sprintf(TelemetrySendBuff,"Height:%0.2f,Satellites:%.0f\r\n",Geodetic_Position_data.Height,Satellites_data.GNSS_satellites);
+..\Code\Src\telemetry.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=57780 RO-data=4128 RW-data=528 ZI-data=37280  
+FromELF: creating hex file...
+"FDI\FDI.axf" - 0 Error(s), 11 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -50,7 +79,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
